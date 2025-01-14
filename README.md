@@ -20,7 +20,7 @@ La aplicación permite:
 ---
 
 ## Requisitos
-1. **Java Development Kit (JDK) 17+**: [Descargar JDK](https://www.oracle.com/java/technologies/downloads/)
+1. **Java Development Kit (JDK)**: [Descargar JDK](https://www.oracle.com/java/technologies/downloads/)
 2. **Maven (opcional)**: Para gestionar dependencias y construir el proyecto.
 3. **IDE recomendado**: IntelliJ IDEA, Eclipse o NetBeans.
 
