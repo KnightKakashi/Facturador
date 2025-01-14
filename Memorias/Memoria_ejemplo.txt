@@ -1,0 +1,7 @@
+Nombre: ****
+
+Rol: *****
+
+Actividad:
+14/01/2025
+He creado X, hemos implementado Y porque Z...
