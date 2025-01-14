@@ -68,6 +68,10 @@ public class MiVista extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FACTURA");
 
+        jTabbedPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 153), new java.awt.Color(204, 0, 0), new java.awt.Color(51, 255, 0), new java.awt.Color(0, 51, 153)));
+        jTabbedPane1.setForeground(new java.awt.Color(0, 51, 153));
+        jTabbedPane1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+
         jLabel1.setText("NOMBRE");
 
         jLabel2.setText("NIF");
@@ -89,7 +93,7 @@ public class MiVista extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                    .addComponent(jTextFieldDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
                     .addComponent(jTextFieldTelefono)
                     .addComponent(jTextFieldNif)
                     .addComponent(jTextFieldNombre))
@@ -166,7 +170,7 @@ public class MiVista extends javax.swing.JFrame {
                             .addComponent(jTextFieldPrecio)
                             .addComponent(jTextFieldCantidad)
                             .addComponent(jComboBoxNombre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                         .addComponent(jButtonAñadir)))
                 .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
