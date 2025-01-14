@@ -33,8 +33,8 @@ Sigue estos pasos para configurar y ejecutar la aplicación localmente:
 - **NetBeans:** Team -> Git -> Clone -> https://github.com/KnightKakashi/Facturador.git
 - **Eclipse:** Window -> Perspective -> Open Perspective -> Other -> Git -> Open -> Clone a Git repository -> https://github.com/KnightKakashi/Facturador.git
 
-### **2. Compila el proyecto
+### **2. Compila el proyecto**
 Usa tu IDE favorito para abrir el proyecto y compilarlo.
 
-### **3. Ejecuta la aplicación
+### **3. Ejecuta la aplicación**
 Ejecuta la clase principal Main.java desde el IDE.
