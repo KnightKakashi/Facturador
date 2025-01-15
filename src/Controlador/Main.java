@@ -22,6 +22,6 @@ public class Main {
         MiVista miVista = new MiVista();
         
         ControladorLanzarVentanas controladorLanzarVentanas = new ControladorLanzarVentanas(ventanaInicio, miVista);
-        controladorLanzarVentanas.lanzarVentanaCarga();
+        controladorLanzarVentanas.lanzarPrograma();
     }  
 }

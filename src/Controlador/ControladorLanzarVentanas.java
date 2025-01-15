@@ -28,14 +28,11 @@ public class ControladorLanzarVentanas implements ActionListener {
         this.miVista = miVista;
         
         System.out.println("Iniciando...");
-        ImageIcon gifIcon = new ImageIcon("src/recursos/inicio_facturacion.gif");
-        ventanaInicio.getJLabelIcono(gifIcon);
-        ventanaInicio.setTitle("Cargando...");
-        ventanaInicio.setSize(550, 480);
-        ventanaInicio.setResizable(false);
         
         escuchadores(this);
     }
+    
+    
     
     public void escuchadores(ActionListener listener){
         miVista.jButtonGuardar(this);
@@ -47,6 +44,14 @@ public class ControladorLanzarVentanas implements ActionListener {
             miVista.setPrecioProducto(precio);
         });
     }
+   
+      /**
+    * Metodo que lanza el programa
+ 
+    */
+     public void lanzarPrograma(){
+        lanzarVentanaCarga();
+    }
 
     /**
     * Metodo que lanza la ventana de carga,
@@ -54,7 +59,14 @@ public class ControladorLanzarVentanas implements ActionListener {
     * se cierra para que se abra la ventana principal de la aplicacion
     */
     public void lanzarVentanaCarga(){
+        System.out.println("Iniciando...");
+        ImageIcon gifIcon = new ImageIcon("src/recursos/inicio_facturacion.gif");
+        ventanaInicio.getJLabelIcono(gifIcon);
+        ventanaInicio.setTitle("Cargando...");
+        ventanaInicio.setSize(550, 480);
+        ventanaInicio.setResizable(false);
         ventanaInicio.setVisible(true);
+        
         Timer timer = new Timer();
         
         timer.schedule(new TimerTask() {
