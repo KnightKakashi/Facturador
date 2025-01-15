@@ -155,12 +155,13 @@ public class MiVista extends javax.swing.JFrame {
 
         jButtonAñadir.setMnemonic('a');
         jButtonAñadir.setText("AÑADIR AL CARRO");
-        jButtonAñadir.setToolTipText("");
+        jButtonAñadir.setToolTipText("Añadir los productos al carro de la compra.");
 
         jLabelLote.setText("LOTE:");
 
         jButtonGuardar.setMnemonic('g');
         jButtonGuardar.setText("GUARDAR");
+        jButtonGuardar.setToolTipText("Exportar la factura en formato PDF y XML.");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
