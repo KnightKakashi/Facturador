@@ -8,9 +8,11 @@ import java.util.ArrayList;
 
 /**
  *Clse encargada de la estructura principal para gestioanr el listado de productos
+ * 
  * @author Miguel ignac
  */
 public class CestaCompra {
+    private String nombreEmpresa;
     private Cliente cliente; //cliente intorducido
     private ArrayList<Producto> lista; //lsitadode produyctos que añade el cliente
 
@@ -38,6 +40,11 @@ public class CestaCompra {
     public void eliminarProducto(Producto p){
         lista.remove(p);
     }
+
+    public ArrayList<Producto> getLista() {
+        return lista;
+    }
+    
     /**
      * Metodo para imprimir los productos que se añadan a la lista
      * @return un String con el listado de los prodcutos añadidos
