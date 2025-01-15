@@ -65,7 +65,9 @@ public class CestaCompra {
          for(Producto p: lista){
              total += p.precioDescuento();
          }
-         return total;
+         double resultado = Math.round(total * 100.0) / 100.0;
+        
+         return resultado;
      }
     
     
