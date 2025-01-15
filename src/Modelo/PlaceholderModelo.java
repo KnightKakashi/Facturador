@@ -10,7 +10,5 @@ package Modelo;
  * @author 
  */
 public class PlaceholderModelo {
-    public void practica(){
-        
-    }
+    
 }
