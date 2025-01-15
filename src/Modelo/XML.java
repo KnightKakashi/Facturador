@@ -10,108 +10,100 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 /**
  *
  * @author ild_37
  */
 public class XML {
-    private static String Name="Mercadona";
-public static String NombreXML="Factura";
-private int ronda=0;//Esta variable te dice si es la primera vez que ese cliente añade un producto 
-private double TotalFactuta=0;
+    public void generarFacturaXML(CestaCompra cesta, String rutaArchivo) {
+        try {
+            // Crear documento
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.newDocument();
 
+            // Crear raÃ­z
+            Element root = doc.createElement("Factura");
+            doc.appendChild(root);
 
-    public void Añadir(String producto,int cantidad,double precio,int descuento,String fecha,int IdCliente,String NCliente) throws IOException{
-    TotalFactuta+=((precio*cantidad)*(100-descuento)/100);
-    if (ronda==0){
-        crearFichero();
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(NombreXML+".xml"))) {
-            // Escribimos la estructura básica del XML
-                writer.write("<Factura>\n");
-                writer.write("    <NEmpresa>Name</NEmpresa>\n");
-                writer.write("    <Productos>\n");
-                writer.write("        <Producto>\n");
-                writer.write("            <NProducto>" + producto + "</NProducto>\n");
-                writer.write("            <Cantidad>" + cantidad + "</Cantidad>\n");
-                writer.write("            <Precio>" + precio + "</Precio>\n");
-                writer.write("            <Descuento>" + descuento + "</Descuento>\n");
-                writer.write("            <Fecha>" + fecha + "</Fecha>\n");
-                writer.write("        </Producto>\n");
-                writer.write("    </Productos>\n");
-                writer.write("    <Cliente>\n");
-                writer.write("        <IDCliente>" + IdCliente + "</IDCliente>\n");
-                writer.write("        <NCliente>" + NCliente + "</NCliente>\n");
-                writer.write("    </Cliente>\n");
-                writer.write("    <Total>" + TotalFactuta + "</Total>\n");
-                writer.write("</Factura>");
-               
-            System.out.println("El archivo XML ha sido creado exitosamente.");
-             ronda++;
-        } catch (IOException e) {
-            System.err.println("Error al escribir en el archivo: " + e.getMessage());    
-    }
-   
-}
-     else{
-            AñadirProducto(producto, cantidad, precio, descuento, fecha);
-             
-             }
-    }
-    
-    public void AñadirProducto(String producto, int cantidad, double precio, int descuento, String fecha) {
-    StringBuilder contenido = new StringBuilder();
-    StringBuilder nuevoProducto = new StringBuilder();
+            // Cliente
+            Element cliente = doc.createElement("Cliente");
+            root.appendChild(cliente);
 
-    // Construir el XML del nuevo producto
-    nuevoProducto.append("        <Producto>\n");
-    nuevoProducto.append("            <NProducto>").append(producto).append("</NProducto>\n");
-    nuevoProducto.append("            <Cantidad>").append(cantidad).append("</Cantidad>\n");
-    nuevoProducto.append("            <Precio>").append(precio).append("</Precio>\n");
-    nuevoProducto.append("            <Descuento>").append(descuento).append("</Descuento>\n");
-    nuevoProducto.append("            <Fecha>").append(fecha).append("</Fecha>\n");
-    nuevoProducto.append("        </Producto>\n");
+            Element nombre = doc.createElement("Nombre");
+            nombre.appendChild(doc.createTextNode(cesta.getCliente().getNombre()));
+            cliente.appendChild(nombre);
 
-    boolean productoInsertado = false;
-
-    try (BufferedReader reader = new BufferedReader(new FileReader(NombreXML + ".xml"))) {
-        String linea;
-
-        // Leer línea por línea
-        while ((linea = reader.readLine()) != null) {
-            // Detectar dónde insertar el nuevo producto
-            if (linea.trim().equals("</Productos>") && !productoInsertado) {
-                contenido.append(nuevoProducto); // Insertar el nuevo producto
-                productoInsertado = true;
-            }
-            contenido.append(linea).append("\n"); // Copiar el resto del contenido
+            Element nif = doc.createElement("NIF");
+            nif.appendChild(doc.createTextNode(cesta.getCliente().getNif()));
+            cliente.appendChild(nif);
             
+            Element tlf = doc.createElement("Telefono");
+            tlf.appendChild(doc.createTextNode(Integer.toString(cesta.getCliente().getTlf())));
+            cliente.appendChild(tlf);
+            
+            Element dir = doc.createElement("Direccion");
+            dir.appendChild(doc.createTextNode(cesta.getCliente().getDireccion()));
+            cliente.appendChild(dir);
+
+            // Productos
+            Element productos = doc.createElement("Productos");
+            root.appendChild(productos);
+
+            for (Producto producto : cesta.getLista()) {
+                Element productoNode = doc.createElement("Producto");
+
+                Element nombreProducto = doc.createElement("Nombre");
+                nombreProducto.appendChild(doc.createTextNode(producto.getNombre()));
+                productoNode.appendChild(nombreProducto);
+                
+                Element cantidadProducto = doc.createElement("Cantidad");
+                cantidadProducto.appendChild(doc.createTextNode((Integer.toString(producto.getCantidad()))));
+                productoNode.appendChild(cantidadProducto);
+
+                Element precioProducto = doc.createElement("Precio");
+                precioProducto.appendChild(doc.createTextNode((Double.toString(producto.getPrecio()))));
+                productoNode.appendChild(precioProducto);
+                
+                Element descuentoProducto = doc.createElement("Descuento");
+                descuentoProducto.appendChild(doc.createTextNode((Double.toString(producto.getDescuento()))));
+                productoNode.appendChild(descuentoProducto);
+                
+                Element fechaProducto = doc.createElement("Fecha");
+                fechaProducto.appendChild(doc.createTextNode(producto.getFecha()));
+                productoNode.appendChild(fechaProducto);
+
+                productos.appendChild(productoNode);
+            }
+
+            // Total
+            Element total = doc.createElement("Total");
+            total.appendChild(doc.createTextNode(String.valueOf(cesta.calcularTotal())));
+            root.appendChild(total);
+
+            // Guardar en archivo
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File(rutaArchivo));
+            transformer.transform(source, result);
+
+            System.out.println("XML generado correctamente: " + rutaArchivo);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        System.err.println("Error al leer el archivo XML: " + e.getMessage());
-        return;
-    }
-
-    // Reescribir el archivo con el contenido actualizado
-    try (BufferedWriter writer = new BufferedWriter(new FileWriter(NombreXML + ".xml"))) {
-        writer.write(contenido.toString());
-        System.out.println("Producto agregado exitosamente al archivo XML.");
-        
-    } catch (IOException e) {
-        System.err.println("Error al escribir en el archivo XML: " + e.getMessage());
     }
 }
-    
-    public void crearFichero () throws IOException{
-
-    File fichero = new File(NombreXML+".xml");
-
-    if(!fichero.exists()){
-       fichero.createNewFile();
-    } 
-    }
-    
-
-}
-
 
