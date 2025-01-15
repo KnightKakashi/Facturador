@@ -18,7 +18,8 @@ import java.io.File;
  */
 public class GeneradorXML {
    
-    public void generarFacturaXML(CestaCompra cesta, String rutaArchivo) {
+    public void generarFacturaXML(CestaCompra cesta, String rutaArchivo) { 
+        
         try {
             // Crear documento
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
