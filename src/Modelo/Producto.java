@@ -1,6 +1,7 @@
 
 package Modelo;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -12,14 +13,14 @@ public class Producto {
   private int cantidad;
   private double precio;
   private double descuento;
-  private Date fecha;
+  private String fecha;
 
-    public Producto(String nombre, int cantidad, double precio, double descuento) {
+    public Producto(String nombre, int cantidad, double precio, double descuento, String fecha) {
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.precio = precio;
         this.descuento = descuento;
-        this.fecha = new Date();
+        this.fecha = fecha;
     }
     
 
@@ -55,11 +56,11 @@ public class Producto {
         this.descuento = descuento;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
