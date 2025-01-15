@@ -32,6 +32,38 @@ public class Empresa {
     // Correo electrónico de nuestra empresa (String porque es texto con símbolos especiales)
     public static final String CORREO = "dam2empresa@sl.com"; 
 
+    public static String getNOMBRE() {
+        return NOMBRE;
+    }
+
+    public static String getNIF() {
+        return NIF;
+    }
+
+    public static String getDIRECCION() {
+        return DIRECCION;
+    }
+
+    public static int getCODIGO_POSTAL() {
+        return CODIGO_POSTAL;
+    }
+
+    public static String getPAIS() {
+        return PAIS;
+    }
+
+    public static String getTELEFONO() {
+        return TELEFONO;
+    }
+
+    public static String getCORREO() {
+        return CORREO;
+    }
+    
+    
+    
+   
+
     // Método para mostrar la información de nuestra empresa
     public static void mostrarInformacion() {
         System.out.println("Información de la Empresa:");

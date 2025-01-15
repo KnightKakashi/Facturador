@@ -14,14 +14,13 @@ public class PlaceholderModelo {
     public Cliente cliente;
     public GeneradorXML genxml;
     public Producto prod;
-    public PDF pdfcito;
 
-    public PlaceholderModelo(CestaCompra cestita, Cliente cliente, GeneradorXML genxml, Producto prod, PDF pdfcito) {
+
+    public PlaceholderModelo(CestaCompra cestita, Cliente cliente, GeneradorXML genxml, Producto prod) {
         this.cestita = cestita;
         this.cliente = cliente;
         this.genxml = genxml;
         this.prod = prod;
-        this.pdfcito = pdfcito;
     }
     
 }
