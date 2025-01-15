@@ -6,7 +6,7 @@ package Modelo;
 
 /**
  *
- * Esta clase muestran los datos fijos de nuestra empresa
+ * Esta clase muestra los datos fijos de nuestra empresa
  * @author SIU LEE<3
  */
 public class Empresa { 
