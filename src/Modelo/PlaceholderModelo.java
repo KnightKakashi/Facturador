@@ -7,7 +7,7 @@ package Modelo;
 
 /**
  *
- * @author dam2
+ * @author 
  */
 public class PlaceholderModelo {
     
