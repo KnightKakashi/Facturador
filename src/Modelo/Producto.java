@@ -68,9 +68,14 @@ public class Producto {
       return (precio-(precio*(descuento/100)))*cantidad;
       
   }
-
+  
+  @Override
+  public String toString(){
+      return "Producto: " + nombre +
+           " | Cantidad: " + cantidad +
+           " | Precio unitario: " + String.format("%.2f", precio) + " €" +
+           " | Descuento: " + descuento + "%" +
+           " | Fecha: " + fecha;
+  }
    
-    
-    
-    
 }

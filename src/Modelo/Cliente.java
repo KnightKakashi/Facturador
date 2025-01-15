@@ -7,7 +7,7 @@ package Modelo;
 /**Clase que gestiona los clientes
  *
  * @author Miguel ignac
- */
+ */ 
 public class Cliente {
   private String nombre;
   private String nif;
