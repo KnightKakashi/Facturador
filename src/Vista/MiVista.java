@@ -153,7 +153,7 @@ public class MiVista extends javax.swing.JFrame {
         jTextAreaProductos.setRows(5);
         jScrollPane1.setViewportView(jTextAreaProductos);
 
-        jButtonAñadir.setMnemonic('b');
+        jButtonAñadir.setMnemonic('a');
         jButtonAñadir.setText("AÑADIR AL CARRO");
         jButtonAñadir.setToolTipText("");
 
