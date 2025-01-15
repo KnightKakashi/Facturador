@@ -96,7 +96,15 @@ public class ControladorLanzarVentanas implements ActionListener {
   
     public void rellenarcarro() {
         miVista.jTextAreaProductos(" ");
-        miVista.jTextAreaProductos(miProducto.toString());
+         String nombreProducto = miVista.getProductoSeleccionado();
+         int cantidad = miVista.getCantidad();
+         double precio = miVista.getPrecioProducto();
+         int descuento = miVista.getDescuento();
+         String fecha = Producto.FechaActual();
+         
+         Producto producto = new Producto(nombreProducto, cantidad, precio, descuento, fecha);
+         miVista.jTextAreaProductos(producto.toString());
+        
         
     }
    
