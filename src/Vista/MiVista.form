@@ -330,6 +330,7 @@
             </Container>
             <Component class="javax.swing.JButton" name="jButtonA&#xf1;adir">
               <Properties>
+                <Property name="mnemonic" type="int" value="97"/>
                 <Property name="text" type="java.lang.String" value="A&#xd1;ADIR AL CARRO"/>
               </Properties>
             </Component>
@@ -340,6 +341,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButtonGuardar">
               <Properties>
+                <Property name="mnemonic" type="int" value="103"/>
                 <Property name="text" type="java.lang.String" value="GUARDAR"/>
               </Properties>
             </Component>

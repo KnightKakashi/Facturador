@@ -42,7 +42,7 @@ public class MiVista extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jTextFieldCantidad = new javax.swing.JTextField();
-        jComboBoxNombre = new javax.swing.JComboBox<String>();
+        jComboBoxNombre = new javax.swing.JComboBox<>();
         jTextFieldPrecio = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jTextFieldDescuento = new javax.swing.JTextField();
@@ -130,7 +130,7 @@ public class MiVista extends javax.swing.JFrame {
 
         jLabel7.setText("PRECIO");
 
-        jComboBoxNombre.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ELIGE TU PRODUCTO", "MANZANA", "PERA", "PLATANO", "MANGO", "PIÑA" }));
+        jComboBoxNombre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ELIGE TU PRODUCTO", "MANZANA", "PERA", "PLATANO", "MANGO", "PIÑA" }));
 
         jLabel8.setText("DESCUENTO");
 
@@ -140,10 +140,12 @@ public class MiVista extends javax.swing.JFrame {
         jTextAreaProductos.setRows(5);
         jScrollPane1.setViewportView(jTextAreaProductos);
 
+        jButtonAñadir.setMnemonic('a');
         jButtonAñadir.setText("AÑADIR AL CARRO");
 
         jLabel10.setText("LOTE:");
 
+        jButtonGuardar.setMnemonic('g');
         jButtonGuardar.setText("GUARDAR");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
