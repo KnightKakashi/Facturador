@@ -14,13 +14,14 @@ public class Producto {
   private double descuento;
   private Date fecha;
 
-    public Producto(String nombre, int cantidad, double precio, double descuento, Date fecha) {
+    public Producto(String nombre, int cantidad, double precio, double descuento) {
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.precio = precio;
         this.descuento = descuento;
-        this.fecha = fecha;
+        this.fecha = new Date();
     }
+    
 
     public String getNombre() {
         return nombre;
@@ -62,7 +63,11 @@ public class Producto {
         this.fecha = fecha;
     }
 
+  public double precioDescuento(){
   
+      return (precio-(precio*(descuento/100)))*cantidad;
+      
+  }
 
    
     
