@@ -8,7 +8,6 @@ package Vista;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 
 /**
  *
@@ -22,15 +21,15 @@ public class VentanaInicio extends javax.swing.JFrame {
     public VentanaInicio() {
         initComponents();
         
-    // Cargar el icono de empresa
-    ImageIcon imgIcon = new ImageIcon(getClass().getResource("/Recursos/IconoEmpresa.png"));
-    if (imgIcon != null) {
-        this.setIconImage(imgIcon.getImage());
-    } else {
-        System.err.println("No se pudo cargar el icono desde la ruta especificada.");
+        //Cargar el icono de empresa
+        ImageIcon imgIcon = new ImageIcon(getClass().getResource("/Recursos/IconoEmpresa.png"));
+        if(imgIcon != null) {
+            this.setIconImage(imgIcon.getImage());
+        }
+        else {
+            System.err.println("No se pudo cargar el icono desde la ruta especificada.");
+        }
     }
-}
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,13 +40,13 @@ public class VentanaInicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jLabelIcono = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(660, 300));
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel1, java.awt.BorderLayout.CENTER);
+        jLabelIcono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabelIcono, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -55,15 +54,11 @@ public class VentanaInicio extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelIcono;
     // End of variables declaration//GEN-END:variables
 
     
     public void getJLabelIcono(Icon icono){
-        jLabel1.setIcon(icono);
+        jLabelIcono.setIcon(icono);
     }
-    
-  
-
 }
-

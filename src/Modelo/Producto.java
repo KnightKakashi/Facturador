@@ -9,11 +9,12 @@ import java.util.Date;
  * @author maicol
  */
 public class Producto {
-  private String nombre;
-  private int cantidad;
-  private double precio;
-  private double descuento;
-  private String fecha;
+    
+    private String nombre;
+    private int cantidad;
+    private double precio;
+    private double descuento;
+    private String fecha;
 
     public Producto(String nombre, int cantidad, double precio, double descuento, String fecha) {
         this.nombre = nombre;
@@ -23,7 +24,6 @@ public class Producto {
         this.fecha = FechaActual();
     }
     
-
     public String getNombre() {
         return nombre;
     }
@@ -64,24 +64,23 @@ public class Producto {
         this.fecha = fecha;
     }
 
-  public double precioDescuento(){
+    public double precioDescuento(){
+        return (precio-(precio*(descuento/100)))*cantidad;
+    }
   
-      return (precio-(precio*(descuento/100)))*cantidad;
-      
-  }
-  
-  @Override
-  public String toString(){
-      return "Producto: " + nombre +
-           " | Cantidad: " + cantidad +
-           " | Precio unitario: " + String.format("%.2f", precio) + " €" +
-           " | Descuento: " + descuento + "%" +
-           " | Fecha: " + fecha;
-  }
-  public static String FechaActual(){
-   LocalDate today = LocalDate.now();
-   String resultado=today.toString();
-   return resultado;
-   }
-   
+    @Override
+    public String toString(){
+        return "Producto: " + nombre + 
+                " | Cantidad: " + cantidad + 
+                " | Precio unitario: " + String.format("%.2f", precio) + " €" + 
+                " | Descuento: " + descuento + "%" + 
+                " | Fecha: " + fecha;
+    }
+    
+    public static String FechaActual(){
+        LocalDate today = LocalDate.now();
+        String resultado=today.toString();
+        
+        return resultado;
+    }
 }
