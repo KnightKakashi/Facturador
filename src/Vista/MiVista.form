@@ -332,6 +332,7 @@
               <Properties>
                 <Property name="mnemonic" type="int" value="97"/>
                 <Property name="text" type="java.lang.String" value="A&#xd1;ADIR AL CARRO"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelLote">
