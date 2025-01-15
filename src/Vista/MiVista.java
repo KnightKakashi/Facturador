@@ -7,6 +7,7 @@ package Vista;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
+import javax.swing.JTextField;
 
 /**
  *
@@ -15,7 +16,7 @@ import javax.swing.JComboBox;
 public class MiVista extends javax.swing.JFrame {
 
     /**
-     * Creates new form MiVista
+     * Constructor de la MiVista
      */
     public MiVista() {
         initComponents();
@@ -292,4 +293,38 @@ public class MiVista extends javax.swing.JFrame {
     public void setPrecioProducto(String precio) {
         jTextFieldPrecio.setText(precio);
     }
+
+    /**
+     * 
+     * @return Devuelve la dirección
+     */
+    public JTextField getjTextFieldDireccion() {
+        return jTextFieldDireccion;
+    }
+
+    /**
+     * 
+     * @return devuelve el NIF del cliente
+     */
+    public JTextField getjTextFieldNif() {
+        return jTextFieldNif;
+    }
+
+    /**
+     * 
+     * @return Devuelve el nombre del cliente
+     */
+    public JTextField getjTextFieldNombreCliente() {
+        return jTextFieldNombreCliente;
+    }
+
+    /**
+     * 
+     * @return Devuelve el telefono
+     */
+    public JTextField getjTextFieldTelefono() {
+        return jTextFieldTelefono;
+    }
+    
+   
 }
