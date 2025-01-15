@@ -51,13 +51,11 @@ public class ControladorLanzarVentanas implements ActionListener {
         });
     }
 
-   
-    
-        /**
-     * Metodo que lanza la ventana de carga,
-     * Este metodo se encarga de lanzar la ventana y despues de unos segundos
-     * se cierra para que se abra la ventana principal de la aplicacion
-     */
+    /**
+    * Metodo que lanza la ventana de carga,
+    * Este metodo se encarga de lanzar la ventana y despues de unos segundos
+    * se cierra para que se abra la ventana principal de la aplicacion
+    */
     public void lanzarVentanaCarga(){
         ventanaInicio.setVisible(true);
         Timer timer = new Timer();
@@ -75,21 +73,21 @@ public class ControladorLanzarVentanas implements ActionListener {
     }
     
     private String obtenerPrecio(String producto){
-            switch (producto) {
-                case "MANZANA":
-                    return "1.50";
-                case "PERA":
-                    return "1.30";
-                case "PLATANO":
-                    return "1.00";
-                case "MANGO":
-                    return "2.00";
-                case "PIÑA":
-                    return "3.50";
-                default:
-                    return "";
-            }
+        switch(producto){
+            case "MANZANA":
+                return "1.50";
+            case "PERA":
+                return "1.30";
+            case "PLATANO":
+                return "1.00";
+            case "MANGO":
+                return "2.00";
+            case "PIÑA":
+                return "3.50";
+            default:
+                return "";
         }
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

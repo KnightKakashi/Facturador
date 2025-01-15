@@ -290,6 +290,6 @@ public class MiVista extends javax.swing.JFrame {
     }
     
     public void setPrecioProducto(String precio) {
-        jTextFieldPrecio.setText(precio); // Establece el precio en el JTextField
+        jTextFieldPrecio.setText(precio);
     }
 }
