@@ -20,7 +20,7 @@ public class XML_A_PDF {
 
     /**
      * Convierte un archivo XML en un archivo PDF.
-     *
+     * @author Ioan Sorin Muntean
      * @param rutaArchivoXML Ruta del archivo XML de entrada.
      * @param rutaArchivoPDF Ruta donde se generará el PDF.
      * @throws Exception Si ocurre un error durante la conversión.
