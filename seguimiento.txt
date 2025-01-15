@@ -1,0 +1,4 @@
+Seguimiento:
+
+Control y test de integración en el proyecto.
+Simulación de actualizaciones Ad hoc.
