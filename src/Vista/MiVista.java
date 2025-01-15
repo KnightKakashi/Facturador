@@ -27,6 +27,7 @@ public class MiVista extends javax.swing.JFrame {
         this.setIconImage(imgIcon.getImage());
     } else {
         System.err.println("No se pudo cargar el icono desde la ruta especificada.");
+        
         }
     }
 
