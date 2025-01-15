@@ -20,7 +20,7 @@ public class Producto {
         this.cantidad = cantidad;
         this.precio = precio;
         this.descuento = descuento;
-        this.fecha = fecha;
+        this.fecha = FechaActual();
     }
     
 
@@ -78,5 +78,10 @@ public class Producto {
            " | Descuento: " + descuento + "%" +
            " | Fecha: " + fecha;
   }
+  public static String FechaActual(){
+   LocalDate today = LocalDate.now();
+   String resultado=today.toString();
+   return resultado;
+   }
    
 }
