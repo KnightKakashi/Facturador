@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author dam2
@@ -15,6 +17,14 @@ public class MiVista extends javax.swing.JFrame {
      */
     public MiVista() {
         initComponents();
+        
+    // Cargar el icono de empresa
+    ImageIcon imgIcon = new ImageIcon(getClass().getResource("/Recursos/IconoEmpresa.png"));
+    if (imgIcon != null) {
+        this.setIconImage(imgIcon.getImage());
+    } else {
+        System.err.println("No se pudo cargar el icono desde la ruta especificada.");
+        }
     }
 
     /**
