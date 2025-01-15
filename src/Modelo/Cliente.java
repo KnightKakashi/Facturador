@@ -9,18 +9,18 @@ package Modelo;
  * @author Miguel ignac
  */ 
 public class Cliente {
-  private String nombre;
-  private String nif;
-  private int tlf;
-  private String direccion;
+    private String nombre;
+    private String nif;
+    private int telefono;
+    private String direccion;
 
     public Cliente() {
     }
   
-    public Cliente(String nombre, String nif, int tlf, String direccion) {
+    public Cliente(String nombre, String nif, int telefono, String direccion) {
         this.nombre = nombre;
         this.nif = nif;
-        this.tlf = tlf;
+        this.telefono = telefono;
         this.direccion = direccion;
     }
 
@@ -40,12 +40,12 @@ public class Cliente {
         this.nif = nif;
     }
 
-    public int getTlf() {
-        return tlf;
+    public int getTelefono() {
+        return telefono;
     }
 
-    public void setTlf(int tlf) {
-        this.tlf = tlf;
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
     }
 
     public String getDireccion() {
@@ -55,6 +55,4 @@ public class Cliente {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    
-  
 }

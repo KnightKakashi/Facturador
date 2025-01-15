@@ -9,7 +9,6 @@ import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.*;
-
 import java.io.File;
 
 /**
@@ -42,9 +41,9 @@ public class GeneradorXML {
             nif.appendChild(doc.createTextNode(cesta.getCliente().getNif()));
             cliente.appendChild(nif);
             
-            Element tlf = doc.createElement("Telefono");
-            tlf.appendChild(doc.createTextNode(Integer.toString(cesta.getCliente().getTlf())));
-            cliente.appendChild(tlf);
+            Element telefono = doc.createElement("Telefono");
+            telefono.appendChild(doc.createTextNode(Integer.toString(cesta.getCliente().getTelefono())));
+            cliente.appendChild(telefono);
             
             Element dir = doc.createElement("Direccion");
             dir.appendChild(doc.createTextNode(cesta.getCliente().getDireccion()));
@@ -95,10 +94,8 @@ public class GeneradorXML {
 
             System.out.println("XML generado correctamente: " + rutaArchivo);
 
-        } catch (Exception e) {
+        } catch(Exception e) {
             e.printStackTrace();
         }
     }
 }
-
-

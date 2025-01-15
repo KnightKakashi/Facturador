@@ -13,8 +13,8 @@ import java.util.ArrayList;
  */
 public class CestaCompra {
     private String nombreEmpresa;
-    private Cliente cliente; //cliente intorducido
-    private ArrayList<Producto> lista; //lsitadode produyctos que añade el cliente
+    private Cliente cliente; //Cliente introducido
+    private ArrayList<Producto> lista; //Listado de produyctos que añade el cliente
 
     public CestaCompra() {
         this.lista = new ArrayList<>();
@@ -49,28 +49,25 @@ public class CestaCompra {
      * Metodo para imprimir los productos que se añadan a la lista
      * @return un String con el listado de los prodcutos añadidos
      */
-     public String imprimirLista(){
-         String res = "Cesta de la compra de: " + cliente.getNombre() + "\n";
-         for(Producto p: lista){
-             res = res + p.toString()+ "\n";
-         }
-         return res;
-     }
-     /**
-      * metodo para calcualr el precio final de la listad e compra
-      * @return double con el importe total de los prodiuctos teniendo enc ueta el descuento
-      */
-     public double calcularTotal(){
-         double total=0;
-         for(Producto p: lista){
-             total += p.precioDescuento();
-         }
-         double resultado = Math.round(total * 100.0) / 100.0;
+    public String imprimirLista(){
+        String res = "Cesta de la compra de: " + cliente.getNombre() + "\n";
+        for(Producto p: lista){
+            res = res + p.toString()+ "\n";
+        }
         
-         return resultado;
-     }
-    
-    
-    
-    
+        return res;
+    }
+    /**
+     * metodo para calcualr el precio final de la listad e compra
+     * @return double con el importe total de los prodiuctos teniendo enc ueta el descuento
+     */
+    public double calcularTotal(){
+        double total = 0;
+        for(Producto p: lista){
+            total += p.precioDescuento();
+        }
+        double resultado = Math.round(total * 100.0) / 100.0;
+        
+        return resultado;
+    }  
 }

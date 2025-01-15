@@ -6,7 +6,6 @@
 
 package Controlador;
 
-import Modelo.PlaceholderModelo;
 import Vista.MiVista;
 import Vista.VentanaInicio;
 import java.awt.event.ActionEvent;
@@ -23,12 +22,10 @@ public class ControladorLanzarVentanas implements ActionListener {
     
     private VentanaInicio ventanaInicio;
     private MiVista miVista;
-    private PlaceholderModelo miModelo;
     
-    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista, PlaceholderModelo miModelo){
+    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista){
         this.ventanaInicio = ventanaInicio;
         this.miVista = miVista;
-        this.miModelo = miModelo;
         
         System.out.println("Iniciando...");
         ImageIcon gifIcon = new ImageIcon("src/recursos/inicio_facturacion.gif");
@@ -45,9 +42,9 @@ public class ControladorLanzarVentanas implements ActionListener {
         miVista.jButtonAñadir(this);
         
         miVista.getjComboBoxNombreProducto().addActionListener(e -> {
-            String producto = miVista.getProductoSeleccionado(); // Método para obtener el producto seleccionado
-            String precio = obtenerPrecio(producto); // Lógica para determinar el precio
-            miVista.setPrecioProducto(precio); // Actualizar el campo de texto
+            String producto = miVista.getProductoSeleccionado();
+            String precio = obtenerPrecio(producto);
+            miVista.setPrecioProducto(precio);
         });
     }
 
@@ -68,8 +65,7 @@ public class ControladorLanzarVentanas implements ActionListener {
                 miVista.setVisible(true);
                  System.out.println("Lanzando ventana principal...");
             }
-        }, 9000); 
-      
+        }, 9000);
     }
     
     private String obtenerPrecio(String producto){

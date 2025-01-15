@@ -4,7 +4,6 @@
  */
 package Controlador;
 
-import Modelo.PlaceholderModelo;
 import Vista.VentanaInicio;
 import Vista.MiVista;
 
@@ -21,10 +20,8 @@ public class Main {
         
         VentanaInicio ventanaInicio = new VentanaInicio();
         MiVista miVista = new MiVista();
-        PlaceholderModelo miModelo = new PlaceholderModelo();
         
-         ControladorLanzarVentanas controladorLanzarVentanas = new ControladorLanzarVentanas(ventanaInicio, miVista, miModelo);
-         controladorLanzarVentanas.lanzarVentanaCarga();
-    }
-    
+        ControladorLanzarVentanas controladorLanzarVentanas = new ControladorLanzarVentanas(ventanaInicio, miVista);
+        controladorLanzarVentanas.lanzarVentanaCarga();
+    }  
 }
