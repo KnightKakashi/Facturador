@@ -291,9 +291,13 @@ public class MiVista extends javax.swing.JFrame {
         return (String) jComboBoxNombreProducto.getSelectedItem();
     }
     
-    public void setPrecioProducto(String precio) {
-        jTextFieldPrecio.setText(precio);
-    }
+   public void setPrecioProducto(String precio) {
+    int precioInt = Integer.parseInt(precio); // Convierte el String a int
+    jTextFieldPrecio.setText(String.valueOf(precioInt)); // Convierte el int de nuevo a String para el JTextField
+}
+   public int getPrecioProducto() {
+    return Integer.parseInt(jTextFieldPrecio.getText()); // Convierte el texto a int
+}
 
     /**
      * 
@@ -326,6 +330,30 @@ public class MiVista extends javax.swing.JFrame {
     public JTextField getjTextFieldTelefono() {
         return jTextFieldTelefono;
     }
+
+   public int getCantidad() {
+    try {
+        return Integer.parseInt(jTextFieldCantidad.getText()); // Convierte el texto a int
+    } catch (NumberFormatException e) {
+        return 0; // Devuelve un valor por defecto en caso de error
+    }
+}
+
+public void setCantidad(int cantidad) {
+    jTextFieldCantidad.setText(String.valueOf(cantidad)); // Convierte el int a String para el JTextField
+}
+
+   public int getDescuento() {
+    try {
+        return Integer.parseInt(jTextFieldDescuento.getText()); // Convierte el texto a int
+    } catch (NumberFormatException e) {
+        return 0; // Devuelve un valor por defecto en caso de error
+    }
+}
+
+public void setDescuento(int descuento) {
+    jTextFieldDescuento.setText(String.valueOf(descuento)); // Convierte el int a String para el JTextField
+}
     
    
 }
