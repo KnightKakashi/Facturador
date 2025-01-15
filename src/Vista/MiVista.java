@@ -4,7 +4,9 @@
  */
 package Vista;
 
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -39,29 +41,29 @@ public class MiVista extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextFieldNombre = new javax.swing.JTextField();
+        jLabelNombreCliente = new javax.swing.JLabel();
+        jLabelNif = new javax.swing.JLabel();
+        jLabelTelefono = new javax.swing.JLabel();
+        jLabelDireccion = new javax.swing.JLabel();
+        jTextFieldNombreCliente = new javax.swing.JTextField();
         jTextFieldNif = new javax.swing.JTextField();
         jTextFieldTelefono = new javax.swing.JTextField();
         jTextFieldDireccion = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jLabelNombreProducto = new javax.swing.JLabel();
+        jLabelCantidad = new javax.swing.JLabel();
+        jLabelPrecio = new javax.swing.JLabel();
         jTextFieldCantidad = new javax.swing.JTextField();
-        jComboBoxNombre = new javax.swing.JComboBox<>();
+        jComboBoxNombreProducto = new javax.swing.JComboBox<>();
         jTextFieldPrecio = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        jLabelDescuento = new javax.swing.JLabel();
         jTextFieldDescuento = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
+        jLabelFecha = new javax.swing.JLabel();
         jTextFieldFecha = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaProductos = new javax.swing.JTextArea();
         jButtonAñadir = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
+        jLabelLote = new javax.swing.JLabel();
         jButtonGuardar = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -83,13 +85,13 @@ public class MiVista extends javax.swing.JFrame {
         jTabbedPane1.setForeground(new java.awt.Color(0, 51, 153));
         jTabbedPane1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
 
-        jLabel1.setText("NOMBRE");
+        jLabelNombreCliente.setText("NOMBRE");
 
-        jLabel2.setText("NIF");
+        jLabelNif.setText("NIF");
 
-        jLabel3.setText("TELEFONO");
+        jLabelTelefono.setText("TELEFONO");
 
-        jLabel4.setText("DIRECCION");
+        jLabelDireccion.setText("DIRECCION");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -98,16 +100,16 @@ public class MiVista extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabelNombreCliente)
+                    .addComponent(jLabelNif)
+                    .addComponent(jLabelTelefono)
+                    .addComponent(jLabelDireccion))
                 .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
                     .addComponent(jTextFieldTelefono)
                     .addComponent(jTextFieldNif)
-                    .addComponent(jTextFieldNombre))
+                    .addComponent(jTextFieldNombreCliente))
                 .addGap(119, 119, 119))
         );
         jPanel1Layout.setVerticalGroup(
@@ -115,36 +117,36 @@ public class MiVista extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelNombreCliente)
+                    .addComponent(jTextFieldNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(jLabelNif)
                     .addComponent(jTextFieldNif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(jLabelTelefono)
                     .addComponent(jTextFieldTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(jLabelDireccion)
                     .addComponent(jTextFieldDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(206, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("CLIENTE", jPanel1);
 
-        jLabel5.setText("NOMBRE");
+        jLabelNombreProducto.setText("NOMBRE");
 
-        jLabel6.setText("CANTIDAD");
+        jLabelCantidad.setText("CANTIDAD");
 
-        jLabel7.setText("PRECIO");
+        jLabelPrecio.setText("PRECIO");
 
-        jComboBoxNombre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ELIGE TU PRODUCTO", "MANZANA", "PERA", "PLATANO", "MANGO", "PIÑA" }));
+        jComboBoxNombreProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ELIGE TU PRODUCTO", "MANZANA", "PERA", "PLATANO", "MANGO", "PIÑA" }));
 
-        jLabel8.setText("DESCUENTO");
+        jLabelDescuento.setText("DESCUENTO");
 
-        jLabel9.setText("FECHA");
+        jLabelFecha.setText("FECHA");
 
         jTextAreaProductos.setColumns(20);
         jTextAreaProductos.setRows(5);
@@ -153,7 +155,7 @@ public class MiVista extends javax.swing.JFrame {
         jButtonAñadir.setMnemonic('a');
         jButtonAñadir.setText("AÑADIR AL CARRO");
 
-        jLabel10.setText("LOTE:");
+        jLabelLote.setText("LOTE:");
 
         jButtonGuardar.setMnemonic('g');
         jButtonGuardar.setText("GUARDAR");
@@ -166,23 +168,23 @@ public class MiVista extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
+                        .addComponent(jLabelLote)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
+                                .addComponent(jLabelCantidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelNombreProducto, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabelPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabelDescuento)
+                            .addComponent(jLabelFecha))
                         .addGap(25, 25, 25)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextFieldFecha)
                             .addComponent(jTextFieldDescuento, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTextFieldPrecio)
                             .addComponent(jTextFieldCantidad)
-                            .addComponent(jComboBoxNombre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jComboBoxNombreProducto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonAñadir)))
                 .addContainerGap())
@@ -204,26 +206,26 @@ public class MiVista extends javax.swing.JFrame {
                         .addComponent(jButtonAñadir))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addComponent(jLabel10)
+                        .addComponent(jLabelLote)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jComboBoxNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabelNombreProducto)
+                            .addComponent(jComboBoxNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
+                            .addComponent(jLabelCantidad)
                             .addComponent(jTextFieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
+                            .addComponent(jLabelPrecio)
                             .addComponent(jTextFieldPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
+                            .addComponent(jLabelDescuento)
                             .addComponent(jTextFieldDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
+                            .addComponent(jLabelFecha)
                             .addComponent(jTextFieldFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -240,17 +242,17 @@ public class MiVista extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAñadir;
     private javax.swing.JButton jButtonGuardar;
-    private javax.swing.JComboBox<String> jComboBoxNombre;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JComboBox<String> jComboBoxNombreProducto;
+    private javax.swing.JLabel jLabelCantidad;
+    private javax.swing.JLabel jLabelDescuento;
+    private javax.swing.JLabel jLabelDireccion;
+    private javax.swing.JLabel jLabelFecha;
+    private javax.swing.JLabel jLabelLote;
+    private javax.swing.JLabel jLabelNif;
+    private javax.swing.JLabel jLabelNombreCliente;
+    private javax.swing.JLabel jLabelNombreProducto;
+    private javax.swing.JLabel jLabelPrecio;
+    private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -262,8 +264,32 @@ public class MiVista extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldDireccion;
     private javax.swing.JTextField jTextFieldFecha;
     private javax.swing.JTextField jTextFieldNif;
-    private javax.swing.JTextField jTextFieldNombre;
+    private javax.swing.JTextField jTextFieldNombreCliente;
     private javax.swing.JTextField jTextFieldPrecio;
     private javax.swing.JTextField jTextFieldTelefono;
     // End of variables declaration//GEN-END:variables
+
+    public void jButtonGuardar(ActionListener l) {
+        jButtonGuardar.addActionListener(l); 
+    }
+    
+    public void jButtonAñadir(ActionListener l) {
+        jButtonAñadir.addActionListener(l); 
+    }
+
+    public void jTextAreaProductos(String texto){
+        jTextAreaProductos.setText(texto);
+    }
+    
+    public JComboBox<String> getjComboBoxNombreProducto() {
+        return jComboBoxNombreProducto;
+    }
+    
+    public String getProductoSeleccionado() {
+        return (String) jComboBoxNombreProducto.getSelectedItem();
+    }
+    
+    public void setPrecioProducto(String precio) {
+        jTextFieldPrecio.setText(precio); // Establece el precio en el JTextField
+    }
 }

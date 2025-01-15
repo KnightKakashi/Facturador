@@ -6,8 +6,11 @@
 
 package Controlador;
 
+import Modelo.PlaceholderModelo;
 import Vista.MiVista;
 import Vista.VentanaInicio;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.ImageIcon;
@@ -16,14 +19,16 @@ import javax.swing.ImageIcon;
  *
  * @author GART
  */
-public class ControladorLanzarVentanas {
+public class ControladorLanzarVentanas implements ActionListener {
     
     private VentanaInicio ventanaInicio;
     private MiVista miVista;
+    private PlaceholderModelo miModelo;
     
-    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista){
+    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista, PlaceholderModelo miModelo){
         this.ventanaInicio = ventanaInicio;
         this.miVista = miVista;
+        this.miModelo = miModelo;
         
         System.out.println("Iniciando...");
         ImageIcon gifIcon = new ImageIcon("src/recursos/inicio_facturacion.gif");
@@ -31,7 +36,22 @@ public class ControladorLanzarVentanas {
         ventanaInicio.setTitle("Cargando...");
         ventanaInicio.setSize(550, 480);
         ventanaInicio.setResizable(false);
+        
+        escuchadores(this);
     }
+    
+    public void escuchadores(ActionListener listener){
+        miVista.jButtonGuardar(this);
+        miVista.jButtonAñadir(this);
+        
+        miVista.getjComboBoxNombreProducto().addActionListener(e -> {
+            String producto = miVista.getProductoSeleccionado(); // Método para obtener el producto seleccionado
+            String precio = obtenerPrecio(producto); // Lógica para determinar el precio
+            miVista.setPrecioProducto(precio); // Actualizar el campo de texto
+        });
+    }
+
+   
     
         /**
      * Metodo que lanza la ventana de carga,
@@ -54,4 +74,25 @@ public class ControladorLanzarVentanas {
       
     }
     
+    private String obtenerPrecio(String producto){
+            switch (producto) {
+                case "MANZANA":
+                    return "1.50";
+                case "PERA":
+                    return "1.30";
+                case "PLATANO":
+                    return "1.00";
+                case "MANGO":
+                    return "2.00";
+                case "PIÑA":
+                    return "3.50";
+                default:
+                    return "";
+            }
+        }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+    }
 }
