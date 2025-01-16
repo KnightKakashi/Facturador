@@ -69,25 +69,23 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButtonGuardarCliente" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabelNombreCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelNif" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelTelefono" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelDireccion" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelLote1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jTextFieldNombreCliente" alignment="0" pref="163" max="32767" attributes="0"/>
-                                  <Component id="jTextFieldTelefono" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextFieldDireccion" max="32767" attributes="0"/>
-                                  <Component id="jTextFieldNif" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                          <Component id="jLabelNombreCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelNif" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelTelefono" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelDireccion" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelLote1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jButtonGuardarCliente" pref="163" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jTextFieldNombreCliente" alignment="0" pref="163" max="32767" attributes="0"/>
+                              <Component id="jTextFieldTelefono" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldDireccion" max="32767" attributes="0"/>
+                              <Component id="jTextFieldNif" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="156" max="32767" attributes="0"/>
+                      <EmptySpace pref="158" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -222,7 +220,7 @@
                   <Font name="Segoe UI" size="14" style="3"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="103"/>
-                <Property name="text" type="java.lang.String" value="GUARDAR"/>
+                <Property name="text" type="java.lang.String" value="GUARDAR CLIENTE"/>
                 <Property name="toolTipText" type="java.lang.String" value="Exportar la factura en formato PDF y XML."/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
