@@ -77,7 +77,8 @@ public class Producto {
     public String toString(){
         return "Producto: " + nombre + 
                 " | Cantidad: " + cantidad + 
-                " | Precio unitario: " + String.format("%.2f", precio) + " €" + 
+                " | Precio/u: " + String.format("%.2f", precio) + " €" + 
+                " | Precio final: " + String.format("%.2f", precioDescuento()) + " €" +
                 " | Descuento: " + descuento + "%" + 
                 " | Fecha: " + fecha;
     }
