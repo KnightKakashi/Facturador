@@ -118,7 +118,11 @@ public class ControladorLanzarVentanas implements ActionListener {
         miVista.jTextAreaProductos(miModelo.cestita.imprimirLista());         
     }
     
-     
+    /**
+     *Metodo que se encarga de coger los datos de la ventana miVista, parsearlos
+     * y añadirlos a la previsualizacion de la factura, esta funcion se usa al pulsar 
+     * el boton "GUARDAR CLIENTE"
+     */ 
     public void rellenarClientePDF(){
         String nombre = miVista.getjTextFieldNombreCliente();
         String nif = miVista.getjTextFieldNif();
@@ -147,6 +151,7 @@ public class ControladorLanzarVentanas implements ActionListener {
                 lanzarVentanaFactura();
                 break;
             case "GUARDAR CLIENTE":
+                System.out.println("Guardando datos del cliente...");
                 rellenarClientePDF();        
                 break;
             default:
