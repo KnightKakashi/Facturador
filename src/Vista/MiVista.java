@@ -139,7 +139,7 @@ public class MiVista extends javax.swing.JFrame {
 
         jButtonGuardarCliente.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jButtonGuardarCliente.setMnemonic('g');
-        jButtonGuardarCliente.setText("GUARDAR");
+        jButtonGuardarCliente.setText("GUARDAR CLIENTE");
         jButtonGuardarCliente.setToolTipText("Exportar la factura en formato PDF y XML.");
         jButtonGuardarCliente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
@@ -154,21 +154,20 @@ public class MiVista extends javax.swing.JFrame {
             .addGroup(jPanelClienteLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonGuardarCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanelClienteLayout.createSequentialGroup()
-                        .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelNombreCliente)
-                            .addComponent(jLabelNif)
-                            .addComponent(jLabelTelefono)
-                            .addComponent(jLabelDireccion)
-                            .addComponent(jLabelLote1))
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextFieldNombreCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                            .addComponent(jTextFieldTelefono, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldDireccion)
-                            .addComponent(jTextFieldNif, javax.swing.GroupLayout.Alignment.LEADING))))
-                .addContainerGap(156, Short.MAX_VALUE))
+                    .addComponent(jLabelNombreCliente)
+                    .addComponent(jLabelNif)
+                    .addComponent(jLabelTelefono)
+                    .addComponent(jLabelDireccion)
+                    .addComponent(jLabelLote1))
+                .addGap(26, 26, 26)
+                .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonGuardarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                    .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jTextFieldNombreCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                        .addComponent(jTextFieldTelefono, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jTextFieldDireccion)
+                        .addComponent(jTextFieldNif, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         jPanelClienteLayout.setVerticalGroup(
             jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
