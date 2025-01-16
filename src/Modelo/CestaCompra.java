@@ -12,7 +12,6 @@ import java.util.ArrayList;
  * @author Miguel ignac
  */
 public class CestaCompra {
-    private String nombreEmpresa;
     private Cliente cliente; //Cliente introducido
     private ArrayList<Producto> lista; //Listado de produyctos que añade el cliente
 

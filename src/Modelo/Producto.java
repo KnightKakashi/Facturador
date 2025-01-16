@@ -16,6 +16,11 @@ public class Producto {
     private double descuento;
     private String fecha;
 
+    public Producto() {
+    }
+    
+    
+    
     public Producto(String nombre, int cantidad, double precio, double descuento, String fecha) {
         this.nombre = nombre;
         this.cantidad = cantidad;

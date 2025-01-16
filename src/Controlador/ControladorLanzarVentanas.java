@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Controlador;
-
+import Modelo.Producto;
 import Vista.MiVista;
 import Vista.VentanaInicio;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.ImageIcon;
@@ -22,10 +17,12 @@ public class ControladorLanzarVentanas implements ActionListener {
     
     private VentanaInicio ventanaInicio;
     private MiVista miVista;
+    private Producto miProducto;
     
-    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista){
+    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista, Producto miProducto){
         this.ventanaInicio = ventanaInicio;
         this.miVista = miVista;
+        this.miProducto = miProducto;
         
         System.out.println("Iniciando...");
         
@@ -96,9 +93,37 @@ public class ControladorLanzarVentanas implements ActionListener {
                 return "";
         }
     }
-
+  
+    public void rellenarcarro() {
+        miVista.jTextAreaProductos(" ");
+         String nombreProducto = miVista.getProductoSeleccionado();
+         int cantidad = miVista.getCantidad();
+         double precio = miVista.getPrecioProducto();
+         int descuento = miVista.getDescuento();
+         String fecha = Producto.FechaActual();
+         
+         Producto producto = new Producto(nombreProducto, cantidad, precio, descuento, fecha);
+         miVista.jTextAreaProductos(producto.toString());
+        
+        
+    }
+   
+    
     @Override
     public void actionPerformed(ActionEvent e) {
+        //jButtonGuardar
+        //jButtonAñadir
+        switch (e.getActionCommand()) {
+            case "AÑADIR AL CARRO":
+            rellenarcarro();
+            break;
+            case "GUARDAR":
+            break;
+            default:
+            System.out.print("Error" + e.getActionCommand());
+            break;
+        }
         
+       
     }
 }
