@@ -76,7 +76,7 @@ public class Producto {
     @Override
      /**
      * metodo para convertir los datos del Arraylist a Strinf
-     * @return String del producto y sus caracteristicas asociadas
+     * @return String del producto y sus características asociadas
      */
     public String toString(){
         return "Producto: " + nombre + 
