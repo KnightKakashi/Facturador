@@ -74,7 +74,7 @@ public class ControladorLanzarVentanas implements ActionListener {
                 miVista.setVisible(true);
                  System.out.println("Lanzando ventana principal...");
             }
-        }, 900); //VOLVER A SUBIR TIEMPO DE CARGA
+        }, 900);  //VOLVER A SUBIR TIEMPO DE CARGA
     }
     
     private String obtenerPrecio(String producto){
