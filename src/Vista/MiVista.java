@@ -425,34 +425,38 @@ public class MiVista extends javax.swing.JFrame {
      * 
      * @return Devuelve la dirección
      */
-    public JTextField getjTextFieldDireccion() {
-        return jTextFieldDireccion;
+    public String getjTextFieldDireccion() {
+        return jTextFieldDireccion.toString();
     }
 
     /**
      * 
      * @return devuelve el NIF del cliente
      */
-    public JTextField getjTextFieldNif() {
-        return jTextFieldNif;
+    public String getjTextFieldNif() {
+        return jTextFieldNif.toString();
     }
 
     /**
      * 
      * @return Devuelve el nombre del cliente
      */
-    public JTextField getjTextFieldNombreCliente() {
-        return jTextFieldNombreCliente;
+    public String getjTextFieldNombreCliente() {
+        return jTextFieldNombreCliente.toString();
     }
 
     /**
      * 
      * @return Devuelve el telefono
      */
-    public JTextField getjTextFieldTelefono() {
-        return jTextFieldTelefono;
+    public int getjTextFieldTelefono() {
+        try{
+        return Integer.parseInt(jTextFieldTelefono.getText());
+                }catch(NumberFormatException e){
+        return 0;
+        
+        }
     }
-
     /**
      * Devuelve la cantidad de productos ingresada y si ocurre un error devuelve un 0.
      * 
@@ -461,8 +465,7 @@ public class MiVista extends javax.swing.JFrame {
     public int getCantidad() {
         try {
             return Integer.parseInt(jTextFieldCantidad.getText()); //Convierte el texto a int
-        } catch(NumberFormatException e) {
-            return 0; //Devuelve un valor por defecto en caso de error
+        } catch(NumberFormatException e) {            return 0; //Devuelve un valor por defecto en caso de error
         }
     }
     

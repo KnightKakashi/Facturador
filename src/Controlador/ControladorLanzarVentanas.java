@@ -1,5 +1,6 @@
 package Controlador;
 
+import Modelo.Cliente;
 import Modelo.PlaceholderModelo;
 import Modelo.Producto;
 import Vista.MiFacturita;
@@ -23,7 +24,7 @@ public class ControladorLanzarVentanas implements ActionListener {
     private MiFacturita miFactura;
     private PlaceholderModelo miModelo;
     
-    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista,MiFacturita miFactura, PlaceholderModelo miModelo){
+    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista,MiFacturita miFactura,PlaceholderModelo miModelo){
         this.ventanaInicio = ventanaInicio;
         this.miVista = miVista;
         this.miModelo = miModelo;
@@ -119,6 +120,19 @@ public class ControladorLanzarVentanas implements ActionListener {
         miVista.jTextAreaProductos(miModelo.cestita.imprimirLista());
               
     }  
+    public void rellenarclientepdf(){
+     
+    String nombre = miVista.getjTextFieldNombreCliente();
+    String nif = miVista.getjTextFieldNif();
+    int telefono = miVista.getjTextFieldTelefono();
+    String direccion = miVista.getjTextFieldDireccion();
+    
+   // Cliente c = new Cliente(nombre, nif, telefono, direccion);
+   miFactura.setjLabelNombre(nombre);
+   miFactura.setjLabelDireccion(direccion);
+   miFactura.setjLabel1NIF(nif);
+   miFactura.setJlabelTelefono(telefono + "");
+    }
     
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -129,7 +143,9 @@ public class ControladorLanzarVentanas implements ActionListener {
                 break;
             case "GUARDAR":
                 System.out.println("Guardando...");
+                rellenarclientepdf();
                 lanzarVentanaFactura();
+                
                 break;
                
             default:
