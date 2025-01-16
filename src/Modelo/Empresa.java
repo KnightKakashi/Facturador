@@ -75,10 +75,4 @@ public class Empresa {
         System.out.println("Teléfono: " + TELEFONO);
         System.out.println("Correo Electrónico: " + CORREO);
     }
-
-    // Método main para probar la clase
-    public static void main(String[] args) {
-        // Llamamos al método para mostrar la información de nuestra linda empresa<3
-        mostrarInformacion();
-    }
 }
