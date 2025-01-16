@@ -37,7 +37,7 @@ public class ControladorLanzarVentanas implements ActionListener {
     public void escuchadores(ActionListener listener){
         miVista.jButtonGuardar(this);
         miVista.jButtonAñadir(this);
-        
+        miVista.jButtonGuardarCliente(this);
         miVista.getjComboBoxNombreProducto().addActionListener(e -> {
             String producto = miVista.getProductoSeleccionado();
             String precio = obtenerPrecio(producto);
@@ -118,6 +118,7 @@ public class ControladorLanzarVentanas implements ActionListener {
         miVista.jTextAreaProductos(miModelo.cestita.imprimirLista());         
     }
     
+     
     public void rellenarClientePDF(){
         String nombre = miVista.getjTextFieldNombreCliente();
         String nif = miVista.getjTextFieldNif();
@@ -140,8 +141,13 @@ public class ControladorLanzarVentanas implements ActionListener {
                 break;
             case "GUARDAR":
                 System.out.println("Guardando...");
-                rellenarClientePDF();
+                //ESTO ES LO QUE TE TOCA A TIU CUDRIG, 
+                //HACER UN METODO QUE COJA LAS COSAS DEL PRODUCTO Y LAS PONGA EN EL TEXTAREA DEL PDF
+                //CUANDO LE DES AL BOTON GUARDAR
                 lanzarVentanaFactura();
+                break;
+            case "GUARDAR CLIENTE":
+                rellenarClientePDF();        
                 break;
             default:
                 System.out.print("Error" + e.getActionCommand());
