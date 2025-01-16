@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
+import javax.swing.ListCellRenderer;
 
 /**
  * Clase MiVista que extiende un JFrame para crear una interfaz.
@@ -22,16 +23,44 @@ public class MiVista extends javax.swing.JFrame {
      * Carga un icono para la ventana.
      */
     public MiVista() {
-        initComponents();
-        
-        // Cargar el icono de empresa
-        ImageIcon imgIcon = new ImageIcon(getClass().getResource("/Recursos/IconoEmpresa.png"));
-        
-        if (imgIcon != null) {
-            this.setIconImage(imgIcon.getImage());
+       initComponents();
+        cargarIconoEmpresa();
+        configurarComboBoxConImagenes();
+    }
+
+    private void cargarIconoEmpresa() {
+        try {
+            ImageIcon imgIcon = new ImageIcon(getClass().getResource("/Recursos/IconoEmpresa.png"));
+            if (imgIcon != null) {
+                this.setIconImage(imgIcon.getImage());
+            } else {
+                System.err.println("No se pudo cargar el icono desde la ruta especificada.");
+            }
+        } catch (NullPointerException e) {
+            System.err.println("Icono no encontrado: " + e.getMessage());
         }
-        else {
-            System.err.println("No se pudo cargar el icono desde la ruta especificada.");
+    }
+
+    private void configurarComboBoxConImagenes() {
+        String[] productos = {"ELIGE TU PRODUCTO", "MANZANA", "PERA", "PLATANO", "MANGO", "PIÑA"};
+        ImageIcon[] iconosProductos = {
+            null, // Sin imagen para la opción "ELIGE TU PRODUCTO"
+            cargarImagen("/Recursos/manzana.png"),
+            cargarImagen("/Recursos/pera.png"),
+            cargarImagen("/Recursos/platano.png"),
+            cargarImagen("/Recursos/mango.png"),
+            cargarImagen("/Recursos/piña.png")
+        };
+
+        jComboBoxNombreProducto.setRenderer((ListCellRenderer<? super String>) new JComboBoxImagenes(productos, iconosProductos));
+    }
+
+    private ImageIcon cargarImagen(String ruta) {
+        try {
+            return new ImageIcon(getClass().getResource(ruta));
+        } catch (NullPointerException e) {
+            System.err.println("Imagen no encontrada: " + ruta);
+            return null;
         }
     }
 
