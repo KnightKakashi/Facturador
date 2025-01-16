@@ -44,6 +44,7 @@ public class MiVista extends javax.swing.JFrame {
     private void configurarComboBoxConImagenes() {
         String[] productos = {"ELIGE TU PRODUCTO", "MANZANA", "PERA", "PLATANO", "MANGO", "PIÑA"};
         ImageIcon[] iconosProductos = {
+            //  
             null, // Sin imagen para la opción "ELIGE TU PRODUCTO"
             cargarImagen("/Recursos/manzana.png"),
             cargarImagen("/Recursos/pera.png"),
