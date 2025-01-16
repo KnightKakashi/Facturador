@@ -74,6 +74,7 @@ public class Producto {
     }
   
     @Override
+  
     public String toString(){
         return "Producto: " + nombre + 
                 " | Cantidad: " + cantidad + 
@@ -82,7 +83,10 @@ public class Producto {
                 " | Descuento: " + descuento + "%" + 
                 " | Fecha: " + fecha;
     }
-    
+    /**
+     * metodo para sacar la fecha actual del ordenador
+     * @return String fecha actual AAAA-MM-DD
+     */
     public static String FechaActual(){
         LocalDate today = LocalDate.now();
         String resultado=today.toString();
