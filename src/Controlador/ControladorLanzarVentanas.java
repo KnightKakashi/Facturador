@@ -109,6 +109,7 @@ public class ControladorLanzarVentanas implements ActionListener {
          
          
          
+         
          miVista.jTextAreaProductos(miCarrito.imprimirLista());
               
     }

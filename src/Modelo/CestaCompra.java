@@ -49,13 +49,13 @@ public class CestaCompra {
      * @return un String con el listado de los prodcutos añadidos
      */
     public String imprimirLista(){
-       // String res = "Cesta de la compra de: " + cliente.getNombre() + "\n";
        String res = "";
         for(Producto p: lista){
-            res = res + p.toString()+ "\n";
+            res = res + p.toString()+ "\n" + 
+            "------------------------------------------------------------------------------------------------------" + "\n";
         }
         
-        return res;
+        return res + ("Total: " + Double.toString(calcularTotal()) +  "€");
     }
     /**
      * metodo para calcualr el precio final de la listad e compra
