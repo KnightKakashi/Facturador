@@ -61,7 +61,6 @@ public class Empresa {
     }
     
     
-    
    
 
     // Método para mostrar la información de nuestra empresa
