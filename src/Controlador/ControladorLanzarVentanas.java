@@ -77,7 +77,7 @@ public class ControladorLanzarVentanas implements ActionListener {
                 miVista.setVisible(true);
                  System.out.println("Lanzando ventana principal...");
             }
-        }, 9000);
+        }, 900);  //VOLVER A SUBIR TIEMPO DE CARGA
     }
     
     public void lanzarVentanaFactura(){
