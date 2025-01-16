@@ -183,3 +183,80 @@ public class XML_A_PDF2 {
                "<Total>" + total + "</Total>";
     }
 }
+
+
+
+/*
+Cómo Modificar Datos y Llamar a las Funciones
+Para utilizar la clase XML_A_PDF2 y convertir un archivo XML a PDF, puedes seguir estos pasos:
+
+Crear una Instancia de la Clase: Primero, crea una instancia de la clase XML_A_PDF2.
+
+java
+XML_A_PDF2 converter = new XML_A_PDF2();
+Llamar a la Función convertirXMLAPDF: Usa la instancia creada para llamar a la función convertirXMLAPDF. Esta función toma dos parámetros: la ruta del archivo XML de entrada y la ruta donde se generará el archivo PDF de salida.
+
+java
+String rutaArchivoXML = "ruta/a/tu/archivo.xml";
+String rutaArchivoPDF = "ruta/a/tu/salida.pdf";
+converter.convertirXMLAPDF(rutaArchivoXML, rutaArchivoPDF);
+Modificar Datos en el Código
+Para modificar los datos del archivo PDF, puedes seguir estos pasos:
+
+Modificar los Datos de la Empresa: Puedes cambiar los datos de la empresa que aparecen en la factura, modificando las líneas correspondientes en el método crearPDF.
+
+java
+doc.add(new Paragraph("Empresa: Mi Nueva Empresa S.L.")
+        .setTextAlignment(TextAlignment.LEFT));
+doc.add(new Paragraph("Dirección: Calle Nueva, 456")
+        .setTextAlignment(TextAlignment.LEFT));
+doc.add(new Paragraph("Teléfono: 123456789")
+        .setTextAlignment(TextAlignment.LEFT));
+doc.add(new Paragraph("Correo: contacto@miempresa.com")
+        .setTextAlignment(TextAlignment.LEFT));
+Modificar la Estructura del PDF: Puedes añadir o quitar columnas de la tabla de productos o cambiar el formato de los datos que aparecen en el PDF.
+
+java
+// Añadir una columna para "Fecha"
+Table table = new Table(6); // Ajustado a 6 columnas para incluir Fecha
+table.addCell("Producto");
+table.addCell("Cantidad");
+table.addCell("Precio Unitario (€)");
+table.addCell("Descuento (%)");
+table.addCell("Total (€)");
+table.addCell("Fecha");
+Agregar o Quitar Elementos del PDF: Puedes agregar nuevos elementos, como imágenes o secciones adicionales, utilizando las funcionalidades de la librería iText.
+
+java
+// Ejemplo de cómo agregar una imagen (asegúrate de tener la imagen en la ruta especificada)
+Image img = new Image(ImageDataFactory.create("ruta/a/tu/imagen.png"));
+doc.add(img);
+Ejemplo Completo
+Aquí tienes un ejemplo completo de cómo puedes modificar los datos y llamar a las funciones:
+
+java
+public class Main {
+    public static void main(String[] args) {
+        try {
+            // Crear una instancia del conversor
+            XML_A_PDF2 converter = new XML_A_PDF2();
+
+            // Rutas de los archivos
+            String rutaArchivoXML = "ruta/a/tu/archivo.xml";
+            String rutaArchivoPDF = "ruta/a/tu/salida.pdf";
+
+            // Convertir el archivo XML a PDF
+            converter.convertirXMLAPDF(rutaArchivoXML, rutaArchivoPDF);
+
+            System.out.println("Conversión completada.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+Conclusión
+La clase XML_A_PDF2 está diseñada para convertir archivos XML en documentos PDF con formato de factura. 
+Puedes personalizar los datos de la empresa, la estructura del PDF y añadir nuevos elementos según tus necesidades.
+Simplemente llama a las funciones proporcionadas y modifica las secciones del código como se ha mostrado en los ejemplos.
+
+*/
