@@ -16,7 +16,6 @@ import javax.swing.ListCellRenderer;
  * @author dam2
  */
 
-
 //
 public class JComboBoxImagenes extends DefaultListCellRenderer {
     private String[] items;
@@ -35,13 +34,13 @@ public class JComboBoxImagenes extends DefaultListCellRenderer {
             boolean isSelected,
             boolean cellHasFocus) {
 
-        // Configuración básica
+        //Configuración básica
         JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 
-        // Asignar texto y, si existe, el icono
-        if (index >= 0 && index < items.length) {
+        //Asignar texto y, si existe, el icono
+        if(index >= 0 && index < items.length) {
             label.setText(items[index]);
-            if (icons[index] != null) {
+            if(icons[index] != null) {
                 label.setIcon(icons[index]);
             } else {
                 label.setIcon(null); // Asegurar que no quede un icono previo

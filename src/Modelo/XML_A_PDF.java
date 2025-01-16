@@ -7,7 +7,6 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -40,7 +39,7 @@ public class XML_A_PDF {
      * @param contenido Contenido a escribir en el PDF.
      * @throws Exception Si ocurre un error durante la generación del PDF.
      */
-    private void crearPDF(String rutaDestino, String contenido) throws Exception {
+    public void crearPDF(String rutaDestino, String contenido) throws Exception {
         // Crear el documento PDF
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(rutaDestino));
 
@@ -63,7 +62,7 @@ public class XML_A_PDF {
      * @return Contenido del XML como texto formateado.
      * @throws Exception Si ocurre un error durante la lectura del XML.
      */
-    private String leerXML(String rutaArchivo) throws Exception {
+    public String leerXML(String rutaArchivo) throws Exception {
         // Configurar el DocumentBuilder para leer el XML
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();

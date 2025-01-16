@@ -1,4 +1,3 @@
-
 package Modelo;
 
 import java.time.LocalDate;
@@ -18,9 +17,7 @@ public class Producto {
 
     public Producto() {
     }
-    
-    
-    
+
     public Producto(String nombre, int cantidad, double precio, double descuento, String fecha) {
         this.nombre = nombre;
         this.cantidad = cantidad;
@@ -86,6 +83,7 @@ public class Producto {
                 " | Descuento: " + descuento + "%" + 
                 " | Fecha: " + fecha;
     }
+    
     /**
      * metodo para sacar la fecha actual del ordenador
      * @return String fecha actual AAAA-MM-DD

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
+
 import java.io.File;
 import java.io.StringWriter;
 import javax.xml.parsers.DocumentBuilder;
@@ -56,19 +57,19 @@ public class XML_A_PDF2 {
      * @throws Exception Si ocurre un error durante la creación del PDF.
      */
     private void crearPDF(String rutaDestino, String contenido) throws Exception {
-        // Crear el documento PDF y su escritor
+        //Crear el documento PDF y su escritor
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(rutaDestino));
 
-        // Crear el layout del documento
+        //Crear el layout del documento
         Document doc = new Document(pdfDoc);
 
-        // Cabecera de la factura
+        //Cabecera de la factura
         doc.add(new Paragraph("Factura Generada")
                 .setBold()
                 .setFontSize(18)
                 .setTextAlignment(TextAlignment.CENTER));
 
-        // Datos de la empresa (puedes personalizarlos según tu empresa)
+        //Datos de la empresa (puedes personalizarlos según tu empresa)
         doc.add(new Paragraph("Empresa: Mi Empresa S.L.")
                 .setTextAlignment(TextAlignment.LEFT));
         doc.add(new Paragraph("Dirección: Calle Ficticia, 123")
@@ -79,7 +80,7 @@ public class XML_A_PDF2 {
                 .setTextAlignment(TextAlignment.LEFT));
         doc.add(new Paragraph("\n"));
 
-        // Datos del cliente extraídos del contenido XML
+        //Datos del cliente extraídos del contenido XML
         doc.add(new Paragraph("Cliente: " + contenido.split("<Nombre>")[1].split("</Nombre>")[0])
                 .setTextAlignment(TextAlignment.LEFT));
         doc.add(new Paragraph("NIF: " + contenido.split("<NIF>")[1].split("</NIF>")[0])
@@ -90,13 +91,13 @@ public class XML_A_PDF2 {
                 .setTextAlignment(TextAlignment.LEFT));
         doc.add(new Paragraph("\n"));
 
-        // Detalles de los productos
+        //Detalles de los productos
         doc.add(new Paragraph("Detalles de la compra:")
                 .setBold()
                 .setFontSize(14)
                 .setTextAlignment(TextAlignment.LEFT));
 
-        // Crear una tabla para los productos
+        //Crear una tabla para los productos
         Table table = new Table(5);
         table.addCell("Producto");
         table.addCell("Cantidad");

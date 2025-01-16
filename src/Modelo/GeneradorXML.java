@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.*;
@@ -20,16 +21,16 @@ public class GeneradorXML {
     public void generarFacturaXML(CestaCompra cesta, String rutaArchivo) { 
         
         try {
-            // Crear documento
+            //Crear documento
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.newDocument();
 
-            // Crear raíz
+            //Crear raíz
             Element root = doc.createElement("factura");
             doc.appendChild(root);
 
-            // Cliente
+            //Cliente
             Element cliente = doc.createElement("Cliente");
             root.appendChild(cliente);
 
@@ -73,7 +74,7 @@ public class GeneradorXML {
             Element productos = doc.createElement("Productos");
             root.appendChild(productos);
 
-            for (Producto producto : cesta.getLista()) {
+            for(Producto producto : cesta.getLista()) {
                 Element productoNode = doc.createElement("Producto");
 
                 Element nombreProducto = doc.createElement("Nombre");
@@ -99,12 +100,12 @@ public class GeneradorXML {
                 productos.appendChild(productoNode);
             }
 
-            // Total
+            //Total
             Element total = doc.createElement("Total");
             total.appendChild(doc.createTextNode(String.valueOf(cesta.calcularTotal())));
             root.appendChild(total);
 
-            // Guardar en archivo
+            //Guardar en archivo
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");

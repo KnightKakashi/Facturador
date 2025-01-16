@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class CestaCompra {
     private Cliente cliente; //Cliente introducido
-    private ArrayList<Producto> lista; //Listado de produyctos que añade el cliente
+    private ArrayList<Producto> lista; //Listado de productos que añade el cliente
 
     public CestaCompra() {
         this.lista = new ArrayList<>();

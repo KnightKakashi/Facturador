@@ -60,10 +60,7 @@ public class Empresa {
         return correo;
     }
     
-    
-   
-
-    // Método para mostrar la información de nuestra empresa
+    //Método para mostrar la información de nuestra empresa
     public static void mostrarInformacion() {
         System.out.println("Información de la Empresa:");
         System.out.println("Nombre: " + nombre);

@@ -24,8 +24,8 @@ public class MiVista extends javax.swing.JFrame {
      */
     public MiVista() {
        initComponents();
-        cargarIconoEmpresa();
-        configurarComboBoxConImagenes();
+       cargarIconoEmpresa();
+       configurarComboBoxConImagenes();
     }
 
     private void cargarIconoEmpresa() {
@@ -36,7 +36,7 @@ public class MiVista extends javax.swing.JFrame {
             } else {
                 System.err.println("No se pudo cargar el icono desde la ruta especificada.");
             }
-        } catch (NullPointerException e) {
+        } catch(NullPointerException e) {
             System.err.println("Icono no encontrado: " + e.getMessage());
         }
     }
@@ -496,5 +496,4 @@ public class MiVista extends javax.swing.JFrame {
     public void setDescuento(double descuento) {
         jTextFieldDescuento.setText(String.valueOf(descuento)); // Convierte el Double a String para el JTextField
     }
-      
 }

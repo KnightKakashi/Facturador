@@ -1,6 +1,5 @@
 package Controlador;
 
-import Modelo.Cliente;
 import Modelo.PlaceholderModelo;
 import Modelo.Producto;
 import Vista.MiFacturita;
@@ -24,13 +23,13 @@ public class ControladorLanzarVentanas implements ActionListener {
     private MiFacturita miFactura;
     private PlaceholderModelo miModelo;
     
-    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista,MiFacturita miFactura,PlaceholderModelo miModelo){
+    public ControladorLanzarVentanas(VentanaInicio ventanaInicio, MiVista miVista, MiFacturita miFactura, PlaceholderModelo miModelo){
         this.ventanaInicio = ventanaInicio;
         this.miVista = miVista;
         this.miModelo = miModelo;
         this.miFactura= miFactura;
         
-        System.out.println("Iniciando...");
+        System.out.println("Iniciando constructor ControladorLanzarVentanas...");
         
         escuchadores(this);
     }
@@ -46,9 +45,8 @@ public class ControladorLanzarVentanas implements ActionListener {
         });
     }
    
-      /**
+    /**
     * Metodo que lanza el programa
- 
     */
      public void lanzarPrograma(){
         lanzarVentanaCarga();
@@ -78,7 +76,7 @@ public class ControladorLanzarVentanas implements ActionListener {
                 miVista.setVisible(true);
                  System.out.println("Lanzando ventana principal...");
             }
-        }, 900);  //VOLVER A SUBIR TIEMPO DE CARGA
+        }, 900); //Volver a subir el tiempo de carga
     }
     
     public void lanzarVentanaFactura(){
@@ -88,7 +86,7 @@ public class ControladorLanzarVentanas implements ActionListener {
         
     }
     
-    private String obtenerPrecio(String producto){
+    public String obtenerPrecio(String producto){
         switch(producto){
             case "MANZANA":
                 return "1.50";
@@ -105,7 +103,7 @@ public class ControladorLanzarVentanas implements ActionListener {
         }
     }
   
-    public void rellenarcarro() {
+    public void rellenarCarro() {
         miVista.jTextAreaProductos(" ");
          
         String nombreProducto = miVista.getProductoSeleccionado();
@@ -117,21 +115,20 @@ public class ControladorLanzarVentanas implements ActionListener {
         Producto p = new Producto(nombreProducto, cantidad, precio, descuento, fecha);
         miModelo.cestita.agregarProducto(p);
 
-        miVista.jTextAreaProductos(miModelo.cestita.imprimirLista());
-              
-    }  
-    public void rellenarclientepdf(){
-     
-    String nombre = miVista.getjTextFieldNombreCliente();
-    String nif = miVista.getjTextFieldNif();
-    int telefono = miVista.getjTextFieldTelefono();
-    String direccion = miVista.getjTextFieldDireccion();
+        miVista.jTextAreaProductos(miModelo.cestita.imprimirLista());         
+    }
     
-   // Cliente c = new Cliente(nombre, nif, telefono, direccion);
-   miFactura.setjLabelNombre(nombre);
-   miFactura.setjLabelDireccion(direccion);
-   miFactura.setjLabel1NIF(nif);
-   miFactura.setJlabelTelefono(telefono + "");
+    public void rellenarClientePDF(){
+        String nombre = miVista.getjTextFieldNombreCliente();
+        String nif = miVista.getjTextFieldNif();
+        int telefono = miVista.getjTextFieldTelefono();
+        String direccion = miVista.getjTextFieldDireccion();
+        
+        //Cliente c = new Cliente(nombre, nif, telefono, direccion);
+        miFactura.setjLabelNombre(nombre);
+        miFactura.setjLabelDireccion(direccion);
+        miFactura.setjLabel1NIF(nif);
+        miFactura.setJlabelTelefono(telefono + "");
     }
     
     @Override
@@ -139,15 +136,13 @@ public class ControladorLanzarVentanas implements ActionListener {
         switch(e.getActionCommand()) {
             case "AÑADIR AL CARRO":
                 System.out.println("Añadiendo al carro...");
-                rellenarcarro();
+                rellenarCarro();
                 break;
             case "GUARDAR":
                 System.out.println("Guardando...");
-                rellenarclientepdf();
+                rellenarClientePDF();
                 lanzarVentanaFactura();
-                
                 break;
-               
             default:
                 System.out.print("Error" + e.getActionCommand());
                 break;
