@@ -219,6 +219,11 @@ public class MiVista extends javax.swing.JFrame {
         jButtonGuardar.setText("GUARDAR");
         jButtonGuardar.setToolTipText("Exportar la factura en formato PDF y XML.");
         jButtonGuardar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelProductoLayout = new javax.swing.GroupLayout(jPanelProducto);
         jPanelProducto.setLayout(jPanelProductoLayout);
@@ -288,6 +293,12 @@ public class MiVista extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
+       MiFacturita aaa = new MiFacturita();
+        aaa.setVisible(true);
+    }//GEN-LAST:event_jButtonGuardarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAñadir;
     private javax.swing.JButton jButtonGuardar;
