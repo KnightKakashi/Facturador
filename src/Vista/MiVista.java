@@ -426,7 +426,7 @@ public class MiVista extends javax.swing.JFrame {
      * @return Devuelve la dirección
      */
     public String getjTextFieldDireccion() {
-        return jTextFieldDireccion.toString();
+        return jTextFieldDireccion.getText();
     }
 
     /**
@@ -434,7 +434,7 @@ public class MiVista extends javax.swing.JFrame {
      * @return devuelve el NIF del cliente
      */
     public String getjTextFieldNif() {
-        return jTextFieldNif.toString();
+        return jTextFieldNif.getText();
     }
 
     /**
@@ -442,7 +442,7 @@ public class MiVista extends javax.swing.JFrame {
      * @return Devuelve el nombre del cliente
      */
     public String getjTextFieldNombreCliente() {
-        return jTextFieldNombreCliente.toString();
+        return jTextFieldNombreCliente.getText();
     }
 
     /**
