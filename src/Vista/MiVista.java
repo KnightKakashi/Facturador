@@ -324,8 +324,7 @@ public class MiVista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-       MiFacturita aaa = new MiFacturita();
-        aaa.setVisible(true);
+     
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
