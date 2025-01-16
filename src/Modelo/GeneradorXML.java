@@ -65,7 +65,7 @@ public class GeneradorXML {
             telefonoEmpresa.appendChild(doc.createTextNode(Empresa.getTelefono()));
             empresaElement.appendChild(telefonoEmpresa);
 
-            Element correoEmpresa = doc.createElement("correo");
+            Element correoEmpresa = doc.createElement("correo") ;
             correoEmpresa.appendChild(doc.createTextNode(Empresa.getCorreo()));
             empresaElement.appendChild(correoEmpresa);
 
