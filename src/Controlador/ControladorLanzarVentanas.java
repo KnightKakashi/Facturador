@@ -124,9 +124,11 @@ public class ControladorLanzarVentanas implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         switch(e.getActionCommand()) {
             case "AÑADIR AL CARRO":
+                System.out.println("Añadiendo al carro...");
                 rellenarcarro();
                 break;
             case "GUARDAR":
+                System.out.println("Guardando...");
                 lanzarVentanaFactura();
                 break;
                
