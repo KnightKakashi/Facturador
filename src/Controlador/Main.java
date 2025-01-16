@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+import Modelo.CestaCompra;
 import Modelo.Producto;
 import Vista.VentanaInicio;
 import Vista.MiVista;
@@ -21,9 +22,10 @@ public class Main {
         
         VentanaInicio ventanaInicio = new VentanaInicio();
         MiVista miVista = new MiVista();
-        Producto miProducto = new Producto();
+        CestaCompra miCarrito= new CestaCompra();
+            
         
-        ControladorLanzarVentanas controladorLanzarVentanas = new ControladorLanzarVentanas(ventanaInicio, miVista, miProducto);
+        ControladorLanzarVentanas controladorLanzarVentanas = new ControladorLanzarVentanas(ventanaInicio, miVista, miCarrito);
         controladorLanzarVentanas.lanzarPrograma();
     }  
 }

@@ -1,4 +1,5 @@
 package Controlador;
+import Modelo.CestaCompra;
 import Modelo.Producto;
 import Vista.MiVista;
 import Vista.VentanaInicio;
@@ -17,12 +18,12 @@ public class ControladorLanzarVentanas implements ActionListener {
     
     private VentanaInicio ventanaInicio;
     private MiVista miVista;
-    private Producto miProducto;
+    private CestaCompra miCarrito;
     
-    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista, Producto miProducto){
+    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista, CestaCompra miCarrito){
         this.ventanaInicio = ventanaInicio;
         this.miVista = miVista;
-        this.miProducto = miProducto;
+        this.miCarrito = miCarrito;
         
         System.out.println("Iniciando...");
         
@@ -95,17 +96,21 @@ public class ControladorLanzarVentanas implements ActionListener {
     }
   
     public void rellenarcarro() {
-        miVista.jTextAreaProductos(" ");
+         miVista.jTextAreaProductos(" ");
+         
          String nombreProducto = miVista.getProductoSeleccionado();
          int cantidad = miVista.getCantidad();
          double precio = miVista.getPrecioProducto();
          int descuento = miVista.getDescuento();
          String fecha = Producto.FechaActual();
          
-         Producto producto = new Producto(nombreProducto, cantidad, precio, descuento, fecha);
-         miVista.jTextAreaProductos(producto.toString());
-        
-        
+         Producto p = new Producto(nombreProducto, cantidad, precio, descuento, fecha);
+         miCarrito.agregarProducto(p);
+         
+         
+         
+         miVista.jTextAreaProductos(miCarrito.imprimirLista());
+              
     }
    
     

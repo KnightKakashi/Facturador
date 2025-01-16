@@ -49,7 +49,8 @@ public class CestaCompra {
      * @return un String con el listado de los prodcutos añadidos
      */
     public String imprimirLista(){
-        String res = "Cesta de la compra de: " + cliente.getNombre() + "\n";
+       // String res = "Cesta de la compra de: " + cliente.getNombre() + "\n";
+       String res = "";
         for(Producto p: lista){
             res = res + p.toString()+ "\n";
         }
