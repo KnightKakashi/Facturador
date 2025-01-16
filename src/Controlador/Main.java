@@ -9,6 +9,7 @@ import Modelo.Cliente;
 import Modelo.GeneradorXML;
 import Modelo.PlaceholderModelo;
 import Modelo.Producto;
+import Vista.MiFacturita;
 import Vista.VentanaInicio;
 import Vista.MiVista;
 
@@ -26,6 +27,7 @@ public class Main {
         //Clases del package Vista
         VentanaInicio ventanaInicio = new VentanaInicio();
         MiVista miVista = new MiVista();
+        MiFacturita miFactura = new MiFacturita();
         
         //Clases del package Modelo
         CestaCompra miCesta = new CestaCompra();
@@ -34,7 +36,7 @@ public class Main {
         Producto miProducto = new Producto();
         
         PlaceholderModelo miModelo = new PlaceholderModelo(miCesta, miCliente, miGeneradorXML, miProducto);       
-        ControladorLanzarVentanas controladorLanzarVentanas = new ControladorLanzarVentanas(ventanaInicio, miVista, miModelo);
+        ControladorLanzarVentanas controladorLanzarVentanas = new ControladorLanzarVentanas(ventanaInicio, miVista,miFactura, miModelo);
         
         controladorLanzarVentanas.lanzarPrograma();
     }  

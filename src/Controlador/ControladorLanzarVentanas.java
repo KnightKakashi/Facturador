@@ -2,6 +2,7 @@ package Controlador;
 
 import Modelo.PlaceholderModelo;
 import Modelo.Producto;
+import Vista.MiFacturita;
 import Vista.MiVista;
 import Vista.VentanaInicio;
 import java.awt.event.ActionEvent;
@@ -19,12 +20,14 @@ public class ControladorLanzarVentanas implements ActionListener {
     
     private VentanaInicio ventanaInicio;
     private MiVista miVista;
+    private MiFacturita miFactura;
     private PlaceholderModelo miModelo;
     
-    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista, PlaceholderModelo miModelo){
+    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista,MiFacturita miFactura, PlaceholderModelo miModelo){
         this.ventanaInicio = ventanaInicio;
         this.miVista = miVista;
         this.miModelo = miModelo;
+        this.miFactura= miFactura;
         
         System.out.println("Iniciando...");
         
@@ -77,6 +80,13 @@ public class ControladorLanzarVentanas implements ActionListener {
         }, 9000);
     }
     
+    public void lanzarVentanaFactura(){
+        System.out.println("Iniciando Ventana de Facturacion");
+       
+        miFactura.setVisible(true);
+        
+    }
+    
     private String obtenerPrecio(String producto){
         switch(producto){
             case "MANZANA":
@@ -117,7 +127,9 @@ public class ControladorLanzarVentanas implements ActionListener {
                 rellenarcarro();
                 break;
             case "GUARDAR":
+                lanzarVentanaFactura();
                 break;
+               
             default:
                 System.out.print("Error" + e.getActionCommand());
                 break;
