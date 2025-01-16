@@ -12,52 +12,52 @@ package Modelo;
 public class Empresa { 
 
     // Nombre de nuestra empresa (String porque es texto)
-    public static final String NOMBRE = "Empresa S.L.";
+    public static final String nombre = "Empresa S.L.";
 
     // NIF de nuestra empresa (String porque incluye letras y números)
-    public static final String NIF = "S1648992";
+    public static final String nif = "S1648992";
 
     // Dirección de nuestra empresa (String porque es texto con caracteres alfanuméricos)
-    public static final String DIRECCION = "C/ Valeras, Aranjuez, 3";
+    public static final String direccion = "C/ Valeras, Aranjuez, 3";
 
     // Código postal de nuestra empresa (int porque es un número entero)
-    public static final int CODIGO_POSTAL = 28300;
+    public static final int codigoPostal = 28300;
 
     // País (String porque puede incluir tanto texto como caracteres especiales)
-    public static final String PAIS = "Madrid, España";
+    public static final String pais = "Madrid, España";
 
     // Número de teléfono (String porque aunque es un número, no se realizan operaciones matemáticas con él)
-    public static final String TELEFONO = "662010948";
+    public static final String telefono = "662010948";
 
     // Correo electrónico de nuestra empresa (String porque es texto con símbolos especiales)
-    public static final String CORREO = "dam2empresa@sl.com"; 
+    public static final String correo = "dam2empresa@sl.com"; 
 
-    public static String getNOMBRE() {
-        return NOMBRE;
+    public static String getNombre() {
+        return nombre;
     }
 
-    public static String getNIF() {
-        return NIF;
+    public static String getNif() {
+        return nif;
     }
 
-    public static String getDIRECCION() {
-        return DIRECCION;
+    public static String getDireccion() {
+        return direccion;
     }
 
-    public static int getCODIGO_POSTAL() {
-        return CODIGO_POSTAL;
+    public static int getCodigo_Postal() {
+        return codigoPostal;
     }
 
-    public static String getPAIS() {
-        return PAIS;
+    public static String getPais() {
+        return pais;
     }
 
-    public static String getTELEFONO() {
-        return TELEFONO;
+    public static String getTelefono() {
+        return telefono;
     }
 
-    public static String getCORREO() {
-        return CORREO;
+    public static String getCorreo() {
+        return correo;
     }
     
     
@@ -67,12 +67,12 @@ public class Empresa {
     // Método para mostrar la información de nuestra empresa
     public static void mostrarInformacion() {
         System.out.println("Información de la Empresa:");
-        System.out.println("Nombre: " + NOMBRE);
-        System.out.println("NIF: " + NIF);
-        System.out.println("Dirección: " + DIRECCION);
-        System.out.println("Código Postal: " + CODIGO_POSTAL);
-        System.out.println("País: " + PAIS);
-        System.out.println("Teléfono: " + TELEFONO);
-        System.out.println("Correo Electrónico: " + CORREO);
+        System.out.println("Nombre: " + nombre);
+        System.out.println("NIF: " + nif);
+        System.out.println("Dirección: " + direccion);
+        System.out.println("Código Postal: " + codigoPostal);
+        System.out.println("País: " + pais);
+        System.out.println("Teléfono: " + telefono);
+        System.out.println("Correo Electrónico: " + correo);
     }
 }

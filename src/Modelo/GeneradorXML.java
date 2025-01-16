@@ -26,28 +26,48 @@ public class GeneradorXML {
             Document doc = dBuilder.newDocument();
 
             // Crear raíz
-            Element root = doc.createElement("Factura");
+            Element root = doc.createElement("factura");
             doc.appendChild(root);
 
             // Cliente
             Element cliente = doc.createElement("Cliente");
             root.appendChild(cliente);
 
-            Element nombre = doc.createElement("Nombre");
+            Element nombre = doc.createElement("nombre");
             nombre.appendChild(doc.createTextNode(cesta.getCliente().getNombre()));
             cliente.appendChild(nombre);
 
-            Element nif = doc.createElement("NIF");
+            Element nif = doc.createElement("nif");
             nif.appendChild(doc.createTextNode(cesta.getCliente().getNif()));
             cliente.appendChild(nif);
             
-            Element telefono = doc.createElement("Telefono");
+            Element telefono = doc.createElement("telefono");
             telefono.appendChild(doc.createTextNode(Integer.toString(cesta.getCliente().getTelefono())));
             cliente.appendChild(telefono);
             
-            Element dir = doc.createElement("Direccion");
+            Element dir = doc.createElement("direccion");
             dir.appendChild(doc.createTextNode(cesta.getCliente().getDireccion()));
             cliente.appendChild(dir);
+            
+            //Empresa
+            Element empresaElement = doc.createElement("Empresa");
+            root.appendChild(empresaElement);
+
+            Element nombreEmpresa = doc.createElement("nombre");
+            nombreEmpresa.appendChild(doc.createTextNode(Empresa.getNombre()));
+            empresaElement.appendChild(nombreEmpresa);
+
+            Element direccionEmpresa = doc.createElement("direccion");
+            direccionEmpresa.appendChild(doc.createTextNode(Empresa.getDireccion()));
+            empresaElement.appendChild(direccionEmpresa);
+
+            Element telefonoEmpresa = doc.createElement("telefono");
+            telefonoEmpresa.appendChild(doc.createTextNode(Empresa.getTelefono()));
+            empresaElement.appendChild(telefonoEmpresa);
+
+            Element correoEmpresa = doc.createElement("correo");
+            correoEmpresa.appendChild(doc.createTextNode(Empresa.getCorreo()));
+            empresaElement.appendChild(correoEmpresa);
 
             // Productos
             Element productos = doc.createElement("Productos");
