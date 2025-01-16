@@ -2,6 +2,7 @@ package Controlador;
 
 import Modelo.PlaceholderModelo;
 import Modelo.Producto;
+import Vista.MiFacturita;
 import Vista.MiVista;
 import Vista.VentanaInicio;
 import java.awt.event.ActionEvent;
@@ -19,12 +20,14 @@ public class ControladorLanzarVentanas implements ActionListener {
     
     private VentanaInicio ventanaInicio;
     private MiVista miVista;
+    private MiFacturita miFactura;
     private PlaceholderModelo miModelo;
     
-    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista, PlaceholderModelo miModelo){
+    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista,MiFacturita miFactura, PlaceholderModelo miModelo){
         this.ventanaInicio = ventanaInicio;
         this.miVista = miVista;
         this.miModelo = miModelo;
+        this.miFactura= miFactura;
         
         System.out.println("Iniciando...");
         
@@ -74,7 +77,14 @@ public class ControladorLanzarVentanas implements ActionListener {
                 miVista.setVisible(true);
                  System.out.println("Lanzando ventana principal...");
             }
-        }, 9000);
+        }, 900);  //VOLVER A SUBIR TIEMPO DE CARGA
+    }
+    
+    public void lanzarVentanaFactura(){
+        System.out.println("Iniciando Ventana de Facturacion");
+       
+        miFactura.setVisible(true);
+        
     }
     
     private String obtenerPrecio(String producto){
@@ -114,10 +124,14 @@ public class ControladorLanzarVentanas implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         switch(e.getActionCommand()) {
             case "AÑADIR AL CARRO":
+                System.out.println("Añadiendo al carro...");
                 rellenarcarro();
                 break;
             case "GUARDAR":
+                System.out.println("Guardando...");
+                lanzarVentanaFactura();
                 break;
+               
             default:
                 System.out.print("Error" + e.getActionCommand());
                 break;
