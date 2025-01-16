@@ -10,13 +10,16 @@ import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 /**
- *
+ * Clase MiVista que extiende un JFrame para crear una interfaz.
+ * Proporciona métodos para que se pueda trabajar con los elementos
+ * y realizar operaciones.
  * @author dam2
  */
 public class MiVista extends javax.swing.JFrame {
 
     /**
-     * Constructor de la MiVista
+     * Constructor de la clase MiVista.
+     * Carga un icono para la ventana.
      */
     public MiVista() {
         initComponents();
@@ -287,31 +290,59 @@ public class MiVista extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldTelefono;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Asociamos un ActionListener para el botón Guardar.
+     * @param l escuchador que gestiona los eventos del botón Guardar.
+     */
     public void jButtonGuardar(ActionListener l) {
         jButtonGuardar.addActionListener(l); 
     }
-    
+    /**
+     * Asociamos un ActionListener para el botón Añadir.
+     * @param l escuchador que gestiona los eventos del botón Añadir.
+     */
     public void jButtonAñadir(ActionListener l) {
         jButtonAñadir.addActionListener(l); 
     }
 
+    /**
+     * 
+     * @param texto pasamos por parámetro el texto que se mostrará en el TextArea
+     */
     public void jTextAreaProductos(String texto){
         jTextAreaProductos.setText(texto);
     }
     
+    /**
+     * 
+     * @return Devuelve un ComboBox que contiene el nombre de todos los productos.
+     */
     public JComboBox<String> getjComboBoxNombreProducto() {
         return jComboBoxNombreProducto;
     }
     
+    /**
+     * 
+     * @return Devuelve el nombre del producto seleccionado como un String.
+     */
     public String getProductoSeleccionado() {
         return (String) jComboBoxNombreProducto.getSelectedItem();
     }
     
+    /**
+     * Pone el precio del producto en el recuadro de texto.
+     * Convierte un valor String a Double.
+     * @param precio pasamos por parámetro el precio como un String.
+     */
     public void setPrecioProducto(String precio) {
         double precioDouble = Double.parseDouble(precio); //Convierte el String a double
         jTextFieldPrecio.setText(String.valueOf(precioDouble)); //Convierte el double de nuevo a String para el JTextField
     }
     
+    /**
+     * 
+     * @return Devuelve el precio del producto como Double
+     */
     public double getPrecioProducto() {
         return Double.parseDouble(jTextFieldPrecio.getText()); //Convierte el texto a double
     }
@@ -348,6 +379,11 @@ public class MiVista extends javax.swing.JFrame {
         return jTextFieldTelefono;
     }
 
+    /**
+     * Devuelve la cantidad de productos ingresada y si ocurre un error devuelve un 0.
+     * 
+     * @return Devuelve la cantidad de productos como un entero(int).
+     */
     public int getCantidad() {
         try {
             return Integer.parseInt(jTextFieldCantidad.getText()); //Convierte el texto a int
@@ -356,19 +392,32 @@ public class MiVista extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Pone la cantidad en el recuadro de texto.
+     * @param cantidad pasamos por parámetro la cantidad como un entero.
+     */
     public void setCantidad(int cantidad) {
         jTextFieldCantidad.setText(String.valueOf(cantidad)); //Convierte el int a String para el JTextField
     }
 
-    public int getDescuento() {
-        try {
-            return Integer.parseInt(jTextFieldDescuento.getText()); //Convierte el texto a int
-        } catch(NumberFormatException e) {
-            return 0; //Devuelve un valor por defecto en caso de error
-        }
-    }
+    /**
+     * Convierte el texto a Double y si ocurre un error devuele(0.0) .
+     * @return Devuelve el descuento como un Double.
+     */
+    public double getDescuento() {
+     try {
+         return Double.parseDouble(jTextFieldDescuento.getText()); // Convierte el texto a Double
+     } catch (NumberFormatException e) {
+        return 0.0; // Devuelve un valor por defecto en caso de error
+     }
+   }
 
-    public void setDescuento(int descuento) {
-        jTextFieldDescuento.setText(String.valueOf(descuento)); //Convierte el int a String para el JTextField
-    } 
+    /**
+     * Pone el descuento en el recuadro de texto.
+     * @param descuento pasamos por parámetro el descuento de tipo Double.
+     */
+    public void setDescuento(double descuento) {
+        jTextFieldDescuento.setText(String.valueOf(descuento)); // Convierte el Double a String para el JTextField
+    }
+      
 }
