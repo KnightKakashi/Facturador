@@ -91,9 +91,10 @@ public class Producto {
      * @return String fecha actual AAAA-MM-DD
      */
     public static String FechaActual(){
-        LocalDate today = LocalDate.now();
-        String resultado=today.toString();
         
+        LocalDate today = LocalDate.now();
+        String resultado=today.toString(); 
         return resultado;
+        
     }
 }
