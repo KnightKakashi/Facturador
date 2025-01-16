@@ -101,7 +101,7 @@ public class ControladorLanzarVentanas implements ActionListener {
          String nombreProducto = miVista.getProductoSeleccionado();
          int cantidad = miVista.getCantidad();
          double precio = miVista.getPrecioProducto();
-         int descuento = miVista.getDescuento();
+         double descuento = miVista.getDescuento();
          String fecha = Producto.FechaActual();
          
          Producto p = new Producto(nombreProducto, cantidad, precio, descuento, fecha);
