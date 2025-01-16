@@ -1,5 +1,6 @@
 package Controlador;
-import Modelo.CestaCompra;
+
+import Modelo.PlaceholderModelo;
 import Modelo.Producto;
 import Vista.MiVista;
 import Vista.VentanaInicio;
@@ -18,20 +19,18 @@ public class ControladorLanzarVentanas implements ActionListener {
     
     private VentanaInicio ventanaInicio;
     private MiVista miVista;
-    private CestaCompra miCarrito;
+    private PlaceholderModelo miModelo;
     
-    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista, CestaCompra miCarrito){
+    public ControladorLanzarVentanas(VentanaInicio ventanaInicio,  MiVista miVista, PlaceholderModelo miModelo){
         this.ventanaInicio = ventanaInicio;
         this.miVista = miVista;
-        this.miCarrito = miCarrito;
+        this.miModelo = miModelo;
         
         System.out.println("Iniciando...");
         
         escuchadores(this);
     }
-    
-    
-    
+
     public void escuchadores(ActionListener listener){
         miVista.jButtonGuardar(this);
         miVista.jButtonAñadir(this);
@@ -96,40 +95,32 @@ public class ControladorLanzarVentanas implements ActionListener {
     }
   
     public void rellenarcarro() {
-         miVista.jTextAreaProductos(" ");
+        miVista.jTextAreaProductos(" ");
          
-         String nombreProducto = miVista.getProductoSeleccionado();
-         int cantidad = miVista.getCantidad();
-         double precio = miVista.getPrecioProducto();
-         double descuento = miVista.getDescuento();
-         String fecha = Producto.FechaActual();
+        String nombreProducto = miVista.getProductoSeleccionado();
+        int cantidad = miVista.getCantidad();
+        double precio = miVista.getPrecioProducto();
+        double descuento = miVista.getDescuento();
+        String fecha = miModelo.prod.getFecha();
          
-         Producto p = new Producto(nombreProducto, cantidad, precio, descuento, fecha);
-         miCarrito.agregarProducto(p);
-         
-         
-         
-         
-         miVista.jTextAreaProductos(miCarrito.imprimirLista());
+        Producto p = new Producto(nombreProducto, cantidad, precio, descuento, fecha);
+        miModelo.cestita.agregarProducto(p);
+
+        miVista.jTextAreaProductos(miModelo.cestita.imprimirLista());
               
-    }
-   
+    }  
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        //jButtonGuardar
-        //jButtonAñadir
-        switch (e.getActionCommand()) {
+        switch(e.getActionCommand()) {
             case "AÑADIR AL CARRO":
-            rellenarcarro();
-            break;
+                rellenarcarro();
+                break;
             case "GUARDAR":
-            break;
+                break;
             default:
-            System.out.print("Error" + e.getActionCommand());
-            break;
+                System.out.print("Error" + e.getActionCommand());
+                break;
         }
-        
-       
     }
 }

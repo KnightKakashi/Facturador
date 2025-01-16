@@ -5,6 +5,9 @@
 package Controlador;
 
 import Modelo.CestaCompra;
+import Modelo.Cliente;
+import Modelo.GeneradorXML;
+import Modelo.PlaceholderModelo;
 import Modelo.Producto;
 import Vista.VentanaInicio;
 import Vista.MiVista;
@@ -20,12 +23,19 @@ public class Main {
      */
     public static void main(String[] args) {
         
+        //Clases del package Vista
         VentanaInicio ventanaInicio = new VentanaInicio();
         MiVista miVista = new MiVista();
-        CestaCompra miCarrito= new CestaCompra();
-            
         
-        ControladorLanzarVentanas controladorLanzarVentanas = new ControladorLanzarVentanas(ventanaInicio, miVista, miCarrito);
+        //Clases del package Modelo
+        CestaCompra miCesta = new CestaCompra();
+        Cliente miCliente = new Cliente();
+        GeneradorXML miGeneradorXML = new GeneradorXML();
+        Producto miProducto = new Producto();
+        
+        PlaceholderModelo miModelo = new PlaceholderModelo(miCesta, miCliente, miGeneradorXML, miProducto);       
+        ControladorLanzarVentanas controladorLanzarVentanas = new ControladorLanzarVentanas(ventanaInicio, miVista, miModelo);
+        
         controladorLanzarVentanas.lanzarPrograma();
     }  
 }
