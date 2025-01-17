@@ -40,10 +40,14 @@ public class Imprimir extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         panel = new javax.swing.JPanel();
         jBtnImprimir = new javax.swing.JButton();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabelNumeroFactura = new javax.swing.JLabel();
+        jLabelFecha = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1100, 900));
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(1056, 816));
 
@@ -59,9 +63,25 @@ public class Imprimir extends javax.swing.JFrame {
         });
         panel.add(jBtnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("dfbdbdbd");
+        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        panel.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 800, 1130, 320));
+
+        jLabelNumeroFactura.setText("jLabel2");
+        panel.add(jLabelNumeroFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 160, 150, 30));
+
+        jLabelFecha.setText("jLabel3");
+        panel.add(jLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, 250, 30));
+
+        jPanel1.setLayout(new java.awt.GridLayout(5, 0));
+        panel.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 410, 240, 140));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/factura.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, -1, -1));
+        panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        panel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 810, -1, -1));
 
         jScrollPane1.setViewportView(panel);
 
@@ -98,7 +118,12 @@ public class Imprimir extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnImprimir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelFecha;
+    private javax.swing.JLabel jLabelNumeroFactura;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
 }
