@@ -57,6 +57,5 @@ public class PlaceholderModelo {
         this.cliente = cliente;
         this.genxml = genxml;
         this.prod = prod;
-        System.out.println("");
     }
 }
