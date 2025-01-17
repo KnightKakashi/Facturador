@@ -13,11 +13,30 @@ import org.w3c.dom.*;
 import java.io.File;
 
 /**
- *
+ * Clase encargada de generar un archivo XML con la información de una factura.
+ * La factura contiene los datos del cliente, de la empresa, los productos adquiridos 
+ * y el total de la compra. El XML generado se guarda en una ruta especificada.
+ * 
+ * <p>
+ * Esta clase usa la API de Java DOM para crear el archivo XML y la API de transformación
+ * para guardar el XML en un archivo en el sistema de archivos.
+ * </p>
+ * 
  * @author ignac
  */
 public class GeneradorXML {
    
+	  /**
+     * Genera un archivo XML con los datos de la factura de una cesta de compra.
+     * El XML generado incluye los datos del cliente, de la empresa, los productos
+     * adquiridos y el total de la compra.
+     *
+     * @param cesta El objeto que contiene la cesta de compra con los detalles de 
+     *              los productos y el cliente.
+     * @param rutaArchivo La ruta donde se guardará el archivo XML generado.
+     * 
+     * @throws Exception Si ocurre un error al generar o guardar el archivo XML.
+     */
     public void generarFacturaXML(CestaCompra cesta, String rutaArchivo) { 
         
         try {
