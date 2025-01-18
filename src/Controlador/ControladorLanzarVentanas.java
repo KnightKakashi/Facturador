@@ -18,7 +18,7 @@ import javax.swing.ImageIcon;
  * @author GART
  */
 public class ControladorLanzarVentanas implements ActionListener {
-    
+  //PRUEBA  
     private VentanaInicio ventanaInicio;
     private MiVista miVista;
     private Imprimir impresionsita;
