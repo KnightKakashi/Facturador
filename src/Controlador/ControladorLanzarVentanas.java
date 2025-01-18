@@ -21,7 +21,6 @@ public class ControladorLanzarVentanas implements ActionListener {
     
     private VentanaInicio ventanaInicio;
     private MiVista miVista;
- //   private MiFacturita miFactura;
     private Imprimir impresionsita;
     private PlaceholderModelo miModelo;
     
@@ -144,7 +143,7 @@ public class ControladorLanzarVentanas implements ActionListener {
         impresionsita.setjLabelNombre(nombre);
         impresionsita.setjLabelDireccion(direccion);
         impresionsita.setjLabel1NIF(nif);
-        impresionsita.setJlabelTelefono(telefono + "");
+        impresionsita.setJLabelTelefono(telefono + "");
     }
     
     @Override
