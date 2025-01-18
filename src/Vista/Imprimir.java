@@ -44,6 +44,10 @@ public class Imprimir extends javax.swing.JFrame {
         jLabelNumeroFactura = new javax.swing.JLabel();
         jLabelFecha = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jLabelNombre = new javax.swing.JLabel();
+        jLabelDireccion = new javax.swing.JLabel();
+        jLabel1NIF = new javax.swing.JLabel();
+        jLabelTelefono = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
 
@@ -77,6 +81,19 @@ public class Imprimir extends javax.swing.JFrame {
         panel.add(jLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, 250, 30));
 
         jPanel1.setLayout(new java.awt.GridLayout(5, 0));
+
+        jLabelNombre.setText("jLabel2");
+        jPanel1.add(jLabelNombre);
+
+        jLabelDireccion.setText("jLabel2");
+        jPanel1.add(jLabelDireccion);
+
+        jLabel1NIF.setText("jLabel2");
+        jPanel1.add(jLabel1NIF);
+
+        jLabelTelefono.setText("jLabel2");
+        jPanel1.add(jLabelTelefono);
+
         panel.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 410, 240, 140));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/factura.png"))); // NOI18N
@@ -98,7 +115,22 @@ public class Imprimir extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+  
+    public void setJLabelTelefono(String telefono){
+            jLabelTelefono.setText(telefono);   
+       }
 
+        public void setjLabel1NIF(String nif){
+            jLabel1NIF.setText(nif);   
+        }
+
+        public void setjLabelNombre(String nombre){
+            jLabelNombre.setText(nombre);   
+        }
+
+        public void setjLabelDireccion(String direccion){
+            jLabelDireccion.setText(direccion);   
+        }   
     private void jBtnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnImprimirActionPerformed
         jBtnImprimir.setVisible(false);
         panel.setBackground(Color.WHITE);
@@ -118,8 +150,12 @@ public class Imprimir extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnImprimir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel1NIF;
+    private javax.swing.JLabel jLabelDireccion;
     private javax.swing.JLabel jLabelFecha;
+    private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelNumeroFactura;
+    private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

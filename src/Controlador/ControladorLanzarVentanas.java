@@ -2,6 +2,7 @@ package Controlador;
 
 import Modelo.PlaceholderModelo;
 import Modelo.Producto;
+import Vista.Imprimir;
 import Vista.MiFacturita;
 import Vista.MiVista;
 import Vista.VentanaInicio;
@@ -20,14 +21,24 @@ public class ControladorLanzarVentanas implements ActionListener {
     
     private VentanaInicio ventanaInicio;
     private MiVista miVista;
-    private MiFacturita miFactura;
+ //   private MiFacturita miFactura;
+    private Imprimir impresionsita;
     private PlaceholderModelo miModelo;
     
-    public ControladorLanzarVentanas(VentanaInicio ventanaInicio, MiVista miVista, MiFacturita miFactura, PlaceholderModelo miModelo){
+    /**
+     * Constructor para inicializar el controlador
+     * 
+     *@param ventanaInicio
+     *@param miVista 
+     *@param impresionsita  
+     *@param miModelo  
+     */
+    
+    public ControladorLanzarVentanas(VentanaInicio ventanaInicio, MiVista miVista, Imprimir impresionsita, PlaceholderModelo miModelo){
         this.ventanaInicio = ventanaInicio;
         this.miVista = miVista;
         this.miModelo = miModelo;
-        this.miFactura= miFactura;
+        this.impresionsita= impresionsita;
         
         System.out.println("Iniciando constructor ControladorLanzarVentanas...");
         
@@ -82,7 +93,7 @@ public class ControladorLanzarVentanas implements ActionListener {
     public void lanzarVentanaFactura(){
         System.out.println("Iniciando Ventana de Facturacion");
        
-        miFactura.setVisible(true);
+        impresionsita.setVisible(true);
         
     }
     
@@ -130,10 +141,10 @@ public class ControladorLanzarVentanas implements ActionListener {
         String direccion = miVista.getjTextFieldDireccion();
         
         //Cliente c = new Cliente(nombre, nif, telefono, direccion);
-        miFactura.setjLabelNombre(nombre);
-        miFactura.setjLabelDireccion(direccion);
-        miFactura.setjLabel1NIF(nif);
-        miFactura.setJlabelTelefono(telefono + "");
+        impresionsita.setjLabelNombre(nombre);
+        impresionsita.setjLabelDireccion(direccion);
+        impresionsita.setjLabel1NIF(nif);
+        impresionsita.setJlabelTelefono(telefono + "");
     }
     
     @Override
@@ -145,7 +156,7 @@ public class ControladorLanzarVentanas implements ActionListener {
                 break;
             case "GUARDAR":
                 System.out.println("Guardando...");
-                //ESTO ES LO QUE TE TOCA A TIU CUDRIG, 
+                //ESTO ES LO QUE TE TOCA A TI CUDRIG, 
                 //HACER UN METODO QUE COJA LAS COSAS DEL PRODUCTO Y LAS PONGA EN EL TEXTAREA DEL PDF
                 //CUANDO LE DES AL BOTON GUARDAR
                 lanzarVentanaFactura();
