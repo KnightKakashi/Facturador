@@ -146,6 +146,19 @@ public class ControladorLanzarVentanas implements ActionListener {
         impresionsita.setJLabelTelefono(telefono + "");
     }
     
+    public void rellenarProductosPDF(){
+        String producto = miVista.getProductoSeleccionado();
+        int cantidad = miVista.getCantidad();
+        double precio = miVista.getPrecioProducto();
+        double descuento = miVista.getDescuento();
+        int iva = 21;
+        double total = miModelo.cestita.calcularTotal();
+
+        String definitivo = "   " + producto + "                                         " + cantidad + "                        " + precio + "€               " + descuento + "               " + iva + "           " + total + "€";
+
+        impresionsita.jTextAreaProductos(definitivo);
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         switch(e.getActionCommand()) {
@@ -155,9 +168,7 @@ public class ControladorLanzarVentanas implements ActionListener {
                 break;
             case "GUARDAR":
                 System.out.println("Guardando...");
-                //ESTO ES LO QUE TE TOCA A TI CUDRIG, 
-                //HACER UN METODO QUE COJA LAS COSAS DEL PRODUCTO Y LAS PONGA EN EL TEXTAREA DEL PDF
-                //CUANDO LE DES AL BOTON GUARDAR
+                rellenarProductosPDF();
                 lanzarVentanaFactura();
                 break;
             case "GUARDAR CLIENTE":

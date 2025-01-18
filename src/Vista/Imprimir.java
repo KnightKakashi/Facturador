@@ -40,7 +40,7 @@ public class Imprimir extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         panel = new javax.swing.JPanel();
         jBtnImprimir = new javax.swing.JButton();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAreaProductos = new javax.swing.JTextArea();
         jLabelNumeroFactura = new javax.swing.JLabel();
         jLabelFecha = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -67,12 +67,12 @@ public class Imprimir extends javax.swing.JFrame {
         });
         panel.add(jBtnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setText("dfbdbdbd");
-        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        panel.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 800, 1130, 320));
+        jTextAreaProductos.setColumns(20);
+        jTextAreaProductos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jTextAreaProductos.setRows(5);
+        jTextAreaProductos.setText("dfbdbdbd");
+        jTextAreaProductos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        panel.add(jTextAreaProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 800, 1130, 320));
 
         jLabelNumeroFactura.setText("jLabel2");
         panel.add(jLabelNumeroFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 160, 150, 30));
@@ -131,6 +131,11 @@ public class Imprimir extends javax.swing.JFrame {
         public void setjLabelDireccion(String direccion){
             jLabelDireccion.setText(direccion);   
         }   
+        
+        public void jTextAreaProductos(String texto){
+        jTextAreaProductos.setText(texto);
+        }
+        
     private void jBtnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnImprimirActionPerformed
         jBtnImprimir.setVisible(false);
         panel.setBackground(Color.WHITE);
@@ -159,7 +164,7 @@ public class Imprimir extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextAreaProductos;
     private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
 }
