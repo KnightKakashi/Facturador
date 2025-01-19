@@ -249,7 +249,7 @@ public class ControladorLanzarVentanas implements ActionListener {
                 rellenarProductosPDF();
                 rellenarClientePDF(); 
                 System.out.println("Sacando factura...");
-                lanzarVentanaFactura();
+                lanzarVentanaFactura() ;
                 }
                 break;
             case "IMPRIMIR":
