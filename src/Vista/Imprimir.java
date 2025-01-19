@@ -8,12 +8,14 @@ package Vista;
 //import com.sun.javafx.iio.ImageStorage;
 import java.awt.Color;
 import java.awt.Desktop;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -26,6 +28,19 @@ public class Imprimir extends javax.swing.JFrame {
      */
     public Imprimir() {
         initComponents();
+    }
+    public void cargarbotonimprimir() {
+         jBtnImprimir.setVisible(true);
+         panel.setBackground(Color.WHITE);
+        try {
+            BufferedImage bi = new BufferedImage(panel.getWidth(), panel.getHeight(), BufferedImage.TYPE_INT_ARGB);
+            panel.paint(bi.getGraphics());
+            String ruta = "src\\Recursos\\factura_impresa.png";
+            ImageIO.write(bi, "png", new File(ruta));
+            Desktop.getDesktop().print(new File(ruta));
+        } catch (IOException ex) {
+            Logger.getLogger(Imprimir.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -60,11 +75,6 @@ public class Imprimir extends javax.swing.JFrame {
 
         jBtnImprimir.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jBtnImprimir.setText("IMPRIMIR");
-        jBtnImprimir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnImprimirActionPerformed(evt);
-            }
-        });
         panel.add(jBtnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         jTextAreaProductos.setColumns(20);
@@ -136,20 +146,6 @@ public class Imprimir extends javax.swing.JFrame {
         jTextAreaProductos.setText(texto);
         }
         
-    private void jBtnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnImprimirActionPerformed
-        jBtnImprimir.setVisible(false);
-        panel.setBackground(Color.WHITE);
-        try {
-            BufferedImage bi = new BufferedImage(panel.getWidth(), panel.getHeight(), BufferedImage.TYPE_INT_ARGB);
-            panel.paint(bi.getGraphics());
-            String ruta = "src\\Recursos\\factura_impresa.png";
-            ImageIO.write(bi, "png", new File(ruta));
-            Desktop.getDesktop().print(new File(ruta));
-        } catch (IOException ex) {
-            Logger.getLogger(Imprimir.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jBtnImprimirActionPerformed
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -167,4 +163,13 @@ public class Imprimir extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextAreaProductos;
     private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
+ /**
+     * Asociamos un ActionListener para el botón Imprimir.
+     * @param l escuchador que gestiona los eventos del botón Guardar.
+     */
+    public void jBtnImprimirpdf(ActionListener l) {
+        jBtnImprimir.addActionListener(l);
+       
+    }
+
 }

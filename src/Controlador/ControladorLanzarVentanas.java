@@ -6,11 +6,19 @@ import Vista.Imprimir;
 import Vista.MiFacturita;
 import Vista.MiVista;
 import Vista.VentanaInicio;
+import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 /**
@@ -23,6 +31,7 @@ public class ControladorLanzarVentanas implements ActionListener {
     private MiVista miVista;
     private Imprimir impresionsita;
     private PlaceholderModelo miModelo;
+    private Object panel;
     
     /**
      * Constructor para inicializar el controlador
@@ -48,6 +57,7 @@ public class ControladorLanzarVentanas implements ActionListener {
         miVista.jButtonGuardar(this);
         miVista.jButtonAñadir(this);
         miVista.jButtonGuardarCliente(this);
+        impresionsita.jBtnImprimirpdf(this);
         miVista.getjComboBoxNombreProducto().addActionListener(e -> {
             String producto = miVista.getProductoSeleccionado();
             String precio = obtenerPrecio(producto);
@@ -145,7 +155,11 @@ public class ControladorLanzarVentanas implements ActionListener {
         impresionsita.setjLabel1NIF(nif);
         impresionsita.setJLabelTelefono(telefono + "");
     }
-    
+    /**
+     *Metodo que se encarga de coger los datos de la ventana miVista
+     * y añadirlos a la parte inferior que simula la cesta de la compra, esta funcion se usa al pulsar 
+     * el boton "AÑADIR AL CARRO"
+     */ 
     public void rellenarProductosPDF(){
         String producto = miVista.getProductoSeleccionado();
         int cantidad = miVista.getCantidad();
@@ -158,6 +172,14 @@ public class ControladorLanzarVentanas implements ActionListener {
 
         impresionsita.jTextAreaProductos(definitivo);
     }
+    /**
+     *Metodo que se encarga de lanzar la venta de impresion para imprimir directamente desde la impresora
+     * a traves del boton "imprimir"
+     */ 
+     private void imprimirPDF() { 
+         System.out.println("esta bien vas imprimir");
+         impresionsita.cargarbotonimprimir();
+    }   
     
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -174,6 +196,10 @@ public class ControladorLanzarVentanas implements ActionListener {
             case "GUARDAR CLIENTE":
                 System.out.println("Guardando datos del cliente...");
                 rellenarClientePDF();        
+                break;
+            case "IMPRIMIR":
+               System.out.println("Vas a Imprimir tu factura");
+               imprimirPDF();
                 break;
             default:
                 System.out.print("Error" + e.getActionCommand());
