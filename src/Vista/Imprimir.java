@@ -28,11 +28,11 @@ public class Imprimir extends javax.swing.JFrame {
      */
     public Imprimir() {
         initComponents();
+        setTitle("Imprimir factura..");
     }
     
     public void cargarbotonimprimir() {
         jBtnImprimir.setVisible(true);
-         panel.setBackground(Color.WHITE);
         try {
             BufferedImage bi = new BufferedImage(panel.getWidth(), panel.getHeight(), BufferedImage.TYPE_INT_ARGB);
             panel.paint(bi.getGraphics());
@@ -65,13 +65,16 @@ public class Imprimir extends javax.swing.JFrame {
         jLabel1NIF = new javax.swing.JLabel();
         jLabelTelefono = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocation(new java.awt.Point(200, 20));
+        setPreferredSize(new java.awt.Dimension(1090, 944));
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(1056, 816));
 
-        panel.setPreferredSize(new java.awt.Dimension(1350, 1900));
+        panel.setBackground(new java.awt.Color(245, 245, 239));
+        panel.setMinimumSize(new java.awt.Dimension(1000, 1444));
+        panel.setPreferredSize(new java.awt.Dimension(1070, 1435));
         panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jBtnImprimir.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -81,35 +84,44 @@ public class Imprimir extends javax.swing.JFrame {
         jTextAreaProductos.setColumns(20);
         jTextAreaProductos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jTextAreaProductos.setRows(5);
-        jTextAreaProductos.setText("dfbdbdbd");
         jTextAreaProductos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        panel.add(jTextAreaProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 800, 1130, 320));
+        panel.add(jTextAreaProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 580, 820, 280));
 
+        jLabelNumeroFactura.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
         jLabelNumeroFactura.setText("jLabel2");
-        panel.add(jLabelNumeroFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 160, 150, 30));
+        panel.add(jLabelNumeroFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 150, 30));
 
+        jLabelFecha.setFont(new java.awt.Font("Tahoma", 0, 23)); // NOI18N
         jLabelFecha.setText("jLabel3");
-        panel.add(jLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, 250, 30));
+        panel.add(jLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, 250, 30));
 
+        jPanel1.setBackground(new java.awt.Color(245, 245, 239));
         jPanel1.setLayout(new java.awt.GridLayout(5, 0));
 
+        jLabelNombre.setBackground(new java.awt.Color(245, 245, 239));
+        jLabelNombre.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
         jLabelNombre.setText("jLabel2");
         jPanel1.add(jLabelNombre);
 
+        jLabelDireccion.setBackground(new java.awt.Color(245, 245, 239));
+        jLabelDireccion.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
         jLabelDireccion.setText("jLabel2");
         jPanel1.add(jLabelDireccion);
 
+        jLabel1NIF.setBackground(new java.awt.Color(245, 245, 239));
+        jLabel1NIF.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
         jLabel1NIF.setText("jLabel2");
         jPanel1.add(jLabel1NIF);
 
+        jLabelTelefono.setBackground(new java.awt.Color(245, 245, 239));
+        jLabelTelefono.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
         jLabelTelefono.setText("jLabel2");
         jPanel1.add(jLabelTelefono);
 
-        panel.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 410, 240, 140));
+        panel.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, 240, 140));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/factura.png"))); // NOI18N
-        panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-        panel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 810, -1, -1));
+        panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 1030, -1));
 
         jScrollPane1.setViewportView(panel);
 
@@ -160,7 +172,6 @@ public class Imprimir extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextAreaProductos;
     private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
