@@ -167,8 +167,45 @@ public class ControladorLanzarVentanas implements ActionListener {
         double descuento = miVista.getDescuento();
         int iva = 21;
         double total = miModelo.cestita.calcularTotal();
+        String cantidad2 = " ";
 
-        String definitivo = "   " + producto + "                                         " + cantidad + "                        " + precio + "€               " + descuento + "               " + iva + "           " + total + "€";
+        switch (producto) {
+            case "MANZANA":
+                producto = "MANZANA                                         ";
+                break;
+            case "PERA":
+                producto = "PERA                                                  ";
+                break;
+            case "PLATANO":
+                producto = "PLATANO                                           ";
+                break;
+            case "MANGO":
+                producto = "MANGO                                              ";
+                break;
+            case "PIÑA":
+                producto = "PIÑA                                                  ";
+                break;
+        }
+
+        switch (Integer.toString(cantidad).length()) {
+            case 1:
+                cantidad2 = cantidad + "                          ";
+                break;
+            case 2:
+                cantidad2 = cantidad + "                         ";
+                break;
+            case 3:
+                cantidad2 = cantidad + "                      ";
+                break;
+            case 4:
+                cantidad2 = cantidad + "                    ";
+                break;
+            case 5:
+                cantidad2 = cantidad + "                  ";
+                break;
+        }
+        
+        String definitivo = "   " + producto + cantidad2 + precio + "                 " + descuento + "              " + iva + "           " + total + "€";
 
         impresionsita.jTextAreaProductos(definitivo);
     }
