@@ -103,7 +103,8 @@ public class ControladorLanzarVentanas implements ActionListener {
     public void lanzarVentanaFactura(){
         System.out.println("Iniciando Ventana de Facturacion");
        
-        impresionsita.setVisible(true);        
+        impresionsita.setVisible(true); 
+           
     }
     
     public String obtenerPrecio(String producto){

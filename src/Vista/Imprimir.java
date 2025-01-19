@@ -29,8 +29,9 @@ public class Imprimir extends javax.swing.JFrame {
     public Imprimir() {
         initComponents();
     }
+    
     public void cargarbotonimprimir() {
-         jBtnImprimir.setVisible(true);
+        jBtnImprimir.setVisible(true);
          panel.setBackground(Color.WHITE);
         try {
             BufferedImage bi = new BufferedImage(panel.getWidth(), panel.getHeight(), BufferedImage.TYPE_INT_ARGB);
@@ -66,7 +67,7 @@ public class Imprimir extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(1056, 816));
 
