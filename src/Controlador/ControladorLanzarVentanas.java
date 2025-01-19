@@ -254,7 +254,7 @@ public class ControladorLanzarVentanas implements ActionListener {
                 break;
             case "IMPRIMIR":
                System.out.println("Vas a Imprimir tu factura");
-               imprimirPDF();
+               imprimirPDF() ;
                 break;
             default:
                 System.out.print("Error" + e.getActionCommand());
