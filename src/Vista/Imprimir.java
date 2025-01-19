@@ -32,7 +32,7 @@ public class Imprimir extends javax.swing.JFrame {
     }
     
     public void cargarbotonimprimir() {
-        jBtnImprimir.setVisible(true);
+        jBtnImprimir.setVisible(false);
         try {
             BufferedImage bi = new BufferedImage(panel.getWidth(), panel.getHeight(), BufferedImage.TYPE_INT_ARGB);
             panel.paint(bi.getGraphics());
@@ -42,6 +42,7 @@ public class Imprimir extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Imprimir.class.getName()).log(Level.SEVERE, null, ex);
         }
+        jBtnImprimir.setVisible(true);
     }
 
     /**
