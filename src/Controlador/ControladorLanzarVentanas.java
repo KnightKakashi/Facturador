@@ -20,6 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -102,8 +103,7 @@ public class ControladorLanzarVentanas implements ActionListener {
     public void lanzarVentanaFactura(){
         System.out.println("Iniciando Ventana de Facturacion");
        
-        impresionsita.setVisible(true);
-        
+        impresionsita.setVisible(true);        
     }
     
     public String obtenerPrecio(String producto){
@@ -154,6 +154,23 @@ public class ControladorLanzarVentanas implements ActionListener {
         impresionsita.setjLabelDireccion(direccion);
         impresionsita.setjLabel1NIF(nif);
         impresionsita.setJLabelTelefono(telefono + "");
+    }
+    
+    public boolean comprobarCampos(){
+        boolean vacio = false;
+        if(miVista.getjTextFieldDireccion().isEmpty() ||
+           miVista.getjTextFieldNif().isEmpty() ||
+           miVista.getjTextFieldNombreCliente().isEmpty() ||
+           miVista.getjTextFieldTelefono()==0 ||
+           miVista.getjTextAreaProductos().isEmpty() ||
+           miVista.getjTextFieldDescuento().isEmpty() ||
+           miVista.getjTextFieldCantidad().isEmpty()){
+            vacio = true;
+            System.out.println("Faltan campos por rellenar");
+            JOptionPane.showMessageDialog(ventanaInicio, "FALTAN CAMPOS POR RELLENAR");
+            return vacio;
+        }
+        return vacio;    
     }
     /**
      *Metodo que se encarga de coger los datos de la ventana miVista
@@ -226,13 +243,14 @@ public class ControladorLanzarVentanas implements ActionListener {
                 rellenarCarro();
                 break;
             case "GUARDAR":
+                if(comprobarCampos()){
                 System.out.println("Guardando...");
+                }else{
                 rellenarProductosPDF();
+                rellenarClientePDF(); 
+                System.out.println("Sacando factura...");
                 lanzarVentanaFactura();
-                break;
-            case "GUARDAR CLIENTE":
-                System.out.println("Guardando datos del cliente...");
-                rellenarClientePDF();        
+                }
                 break;
             case "IMPRIMIR":
                System.out.println("Vas a Imprimir tu factura");
