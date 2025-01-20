@@ -207,6 +207,7 @@ public class MiVista extends javax.swing.JFrame {
         jComboBoxNombreProducto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jTextFieldPrecio.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jTextFieldPrecio.setText("1.5");
         jTextFieldPrecio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabelDescuento.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
