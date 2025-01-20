@@ -24,7 +24,13 @@ public class CestaCompra {
     public CestaCompra() {
         this.lista = new ArrayList<>();
     }
-
+       /**
+     * Constructor con cliente y el araylist de productos.
+     */
+    public CestaCompra(Cliente cliente, ArrayList<Producto> lista) {
+        this.cliente = cliente;
+        this.lista = lista;
+    }
      /**
      * Constructor que inicializa una cesta con un cliente.
      * @param cliente Cliente asociado a la cesta.

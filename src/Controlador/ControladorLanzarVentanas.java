@@ -1,5 +1,6 @@
 package Controlador;
 
+import Modelo.Cliente;
 import Modelo.PlaceholderModelo;
 import Modelo.Producto;
 import Vista.Imprimir;
@@ -131,10 +132,19 @@ public class ControladorLanzarVentanas implements ActionListener {
         double precio = miVista.getPrecioProducto();
         double descuento = miVista.getDescuento();
         String fecha = miModelo.prod.getFecha();
+        
+        String nombre = miVista.getjTextFieldNombreCliente();
+        String nif = miVista.getjTextFieldNif();
+        int telefono = miVista.getjTextFieldTelefono();
+        String direccion = miVista.getjTextFieldDireccion();
          
         Producto p = new Producto(nombreProducto, cantidad, precio, descuento, fecha);
+        Cliente c = new Cliente(nombre, nif, telefono, direccion);
+        
         miModelo.cestita.agregarProducto(p);
-
+        miModelo.cestita.setCliente(c);
+        
+        miModelo.genxml.generarFacturaXML(miModelo.cestita,"facturasXML.xml");
         miVista.jTextAreaProductos(miModelo.cestita.imprimirLista());         
     }
     

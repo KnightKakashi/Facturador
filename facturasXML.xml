@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<factura>
+    <Cliente>
+        <nombre>Javier Silvero</nombre>
+        <nif>123456G</nif>
+        <telefono>623422424</telefono>
+        <direccion>Aranjuez</direccion>
+    </Cliente>
+    <Empresa>
+        <nombre>Empresa S.L.</nombre>
+        <direccion>C/ Valeras, Aranjuez, 3</direccion>
+        <telefono>662010948</telefono>
+        <correo>dam2empresa@sl.com</correo>
+    </Empresa>
+    <Productos>
+        <Producto>
+            <Nombre>MANZANA</Nombre>
+            <Cantidad>10</Cantidad>
+            <Precio>1.5</Precio>
+            <Descuento>10.0</Descuento>
+            <Fecha>2025-01-20</Fecha>
+        </Producto>
+        <Producto>
+            <Nombre>PLATANO</Nombre>
+            <Cantidad>100</Cantidad>
+            <Precio>1.0</Precio>
+            <Descuento>20.0</Descuento>
+            <Fecha>2025-01-20</Fecha>
+        </Producto>
+    </Productos>
+    <Total>93.5</Total>
+</factura>
