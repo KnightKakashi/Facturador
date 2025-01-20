@@ -3,7 +3,6 @@ package Controlador;
 import Modelo.PlaceholderModelo;
 import Modelo.Producto;
 import Vista.Imprimir;
-import Vista.MiFacturita;
 import Vista.MiVista;
 import Vista.VentanaInicio;
 import java.awt.Color;
@@ -178,7 +177,7 @@ public class ControladorLanzarVentanas implements ActionListener {
      * y añadirlos a la parte inferior que simula la cesta de la compra, esta funcion se usa al pulsar 
      * el boton "AÑADIR AL CARRO"
      */ 
-    public void rellenarProductosPDF(){
+    /*public void rellenarProductosPDF(){
         String producto = miVista.getProductoSeleccionado();
         int cantidad = miVista.getCantidad();
         double precio = miVista.getPrecioProducto();
@@ -226,7 +225,31 @@ public class ControladorLanzarVentanas implements ActionListener {
         String definitivo = "   " + producto + cantidad2 + precio + "                 " + descuento + "              " + iva + "           " + total + "€";
 
         impresionsita.jTextAreaProductos(definitivo);
+    }*/
+    
+    public void rellenarProductosPDF(String[][] productos){
+        StringBuilder sb = new StringBuilder();
+            
+        for (String[] producto : productos) {
+        sb.append(String.format("%-20s %-10s %-10s %-10s %-10s %-10s%n", 
+            producto[0], producto[1], producto[2], producto[3], producto[4], producto[5]));
+        }
+        
+        impresionsita.jTextAreaProductos(sb.toString());
     }
+    
+    public void relleno(){
+        String[][] productos = {
+            {miVista.getProductoSeleccionado(), miVista.getjTextFieldCantidad(), miVista.getjTextFieldPrecio(), miVista.getjTextFieldDescuento(), "21%", Double.toString(miModelo.cestita.calcularTotal())},
+            /*{"Pera", "5", "2.00", "5%", "10%", "9.50"},
+            {"Plátano", "2", "1.20", "0%", "10%", "2.64"},
+            {"Mango", "1", "3.50", "10%", "10%", "3.85"},
+            {"Piña", "4", "2.50", "0%", "10%", "11.00"}*/
+        };
+        
+        rellenarProductosPDF(productos);
+    }
+    
     /**
      *Metodo que se encarga de lanzar la venta de impresion para imprimir directamente desde la impresora
      * a traves del boton "imprimir"
@@ -247,7 +270,7 @@ public class ControladorLanzarVentanas implements ActionListener {
                 if(comprobarCampos()){
                 System.out.println("Guardando...");
                 }else{
-                rellenarProductosPDF();
+                relleno();
                 rellenarClientePDF(); 
                 System.out.println("Sacando factura...");
                 lanzarVentanaFactura() ;

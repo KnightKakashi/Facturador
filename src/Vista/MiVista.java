@@ -438,6 +438,11 @@ public class MiVista extends javax.swing.JFrame {
         
         }
     }
+    
+    public String getjTextFieldPrecio(){
+        return jTextFieldPrecio.getText();
+    }
+    
         public String getjTextFieldDescuento() {
         return jTextFieldDescuento.getText();
         }

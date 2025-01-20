@@ -157,7 +157,7 @@ public class Imprimir extends javax.swing.JFrame {
         }   
         
         public void jTextAreaProductos(String texto){
-        jTextAreaProductos.setText(texto);
+            jTextAreaProductos.setText(texto);
         }
         
 
