@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <factura>
     <Cliente>
-        <nombre>Javier Silvero</nombre>
-        <nif>123456G</nif>
-        <telefono>623422424</telefono>
-        <direccion>Aranjuez</direccion>
+        <nombre>aaaa</nombre>
+        <nif>2345678</nif>
+        <telefono>11131</telefono>
+        <direccion>aaaaaaa</direccion>
     </Cliente>
     <Empresa>
         <nombre>Empresa S.L.</nombre>
@@ -15,18 +15,32 @@
     <Productos>
         <Producto>
             <Nombre>MANZANA</Nombre>
-            <Cantidad>10</Cantidad>
+            <Cantidad>2</Cantidad>
             <Precio>1.5</Precio>
+            <Descuento>5.0</Descuento>
+            <Fecha>2025-01-20</Fecha>
+        </Producto>
+        <Producto>
+            <Nombre>PERA</Nombre>
+            <Cantidad>5</Cantidad>
+            <Precio>1.3</Precio>
             <Descuento>10.0</Descuento>
             <Fecha>2025-01-20</Fecha>
         </Producto>
         <Producto>
-            <Nombre>PLATANO</Nombre>
-            <Cantidad>100</Cantidad>
-            <Precio>1.0</Precio>
-            <Descuento>20.0</Descuento>
+            <Nombre>MANZANA</Nombre>
+            <Cantidad>2</Cantidad>
+            <Precio>1.5</Precio>
+            <Descuento>15.0</Descuento>
+            <Fecha>2025-01-20</Fecha>
+        </Producto>
+        <Producto>
+            <Nombre>MANZANA</Nombre>
+            <Cantidad>2</Cantidad>
+            <Precio>1.5</Precio>
+            <Descuento>15.0</Descuento>
             <Fecha>2025-01-20</Fecha>
         </Producto>
     </Productos>
-    <Total>93.5</Total>
+    <Total>13.8</Total>
 </factura>

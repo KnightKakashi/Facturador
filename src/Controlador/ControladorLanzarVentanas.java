@@ -250,11 +250,7 @@ public class ControladorLanzarVentanas implements ActionListener {
     
     public void relleno(){
         String[][] productos = {
-            {miVista.getProductoSeleccionado(), miVista.getjTextFieldCantidad(), miVista.getjTextFieldPrecio(), miVista.getjTextFieldDescuento(), "21%", Double.toString(miModelo.cestita.calcularTotal())},
-            /*{"Pera", "5", "2.00", "5%", "10%", "9.50"},
-            {"Plátano", "2", "1.20", "0%", "10%", "2.64"},
-            {"Mango", "1", "3.50", "10%", "10%", "3.85"},
-            {"Piña", "4", "2.50", "0%", "10%", "11.00"}*/
+            {miVista.getProductoSeleccionado(), miVista.getjTextFieldCantidad(), miVista.getjTextFieldPrecio(), miVista.getjTextFieldDescuento(), "21%", Double.toString(miModelo.cestita.calcularTotal())}
         };
         
         rellenarProductosPDF(productos);
