@@ -170,16 +170,16 @@ public class ControladorLanzarVentanas implements ActionListener {
         boolean vacio = false;
         if(miVista.getjTextFieldDireccion().isEmpty() ||
            miVista.getjTextFieldNif().isEmpty() ||
-           miVista.getjTextFieldNombreCliente().isEmpty() ||
-           miVista.getjTextFieldTelefono()==0 ||
-           miVista.getjTextAreaProductos().isEmpty() ||
+           miVista.getjTextFieldNombreCliente().isEmpty()||
            miVista.getjTextFieldDescuento().isEmpty() ||
            miVista.getjTextFieldCantidad().isEmpty()){
             vacio = true;
             System.out.println("Faltan campos por rellenar");
-            JOptionPane.showMessageDialog(ventanaInicio, "FALTAN CAMPOS POR RELLENAR");
+            JOptionPane.showMessageDialog(ventanaInicio, "CAMPOS INVALIDOS!");
             return vacio;
-        }
+        }else if (miVista.getjTextFieldTelefono()==0){
+            vacio = true;               
+    }
         return vacio;    
     }
     /**
