@@ -58,6 +58,7 @@ public class ControladorLanzarVentanas implements ActionListener {
         miVista.jButtonGuardar(this);
         miVista.jButtonAñadir(this);
         miVista.jButtonGuardarCliente(this);
+        miVista.jButtonLimpiar(this);
         impresionsita.jBtnImprimirpdf(this);
         miVista.getjComboBoxNombreProducto().addActionListener(e -> {
             String producto = miVista.getProductoSeleccionado();
@@ -286,9 +287,17 @@ public class ControladorLanzarVentanas implements ActionListener {
                System.out.println("Vas a Imprimir tu factura");
                imprimirPDF() ;
                 break;
+            case "LIMPIAR":
+                System.out.println("Limpiando el area de productos...");
+                limpiarAreaProductos();
+                break;
             default:
                 System.out.print("Error" + e.getActionCommand());
                 break;
         }
+    }
+
+    private void limpiarAreaProductos() {
+        miVista.jTextAreaProductos("");
     }
 }
