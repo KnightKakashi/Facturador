@@ -47,6 +47,7 @@ public class ControladorLanzarVentanas implements ActionListener {
     }
 
     public void escuchadores(ActionListener listener){
+        borrar.jButtonBorrarElemento(this);
         miVista.jButtonGuardar(this);
         miVista.jButtonAñadir(this);
         miVista.jButtonLimpiar(this);

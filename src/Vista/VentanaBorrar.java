@@ -4,6 +4,7 @@
  */
 package Vista;
 
+import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
 
 /**
@@ -76,7 +77,9 @@ public class VentanaBorrar extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxBorrar;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-
+public void jButtonBorrarElemento(ActionListener l) {
+        jButtonBorrarElemento.addActionListener(l); 
+    }
     public JComboBox<String> getjComboBoxBorrar() {
         return jComboBoxBorrar;
     }
