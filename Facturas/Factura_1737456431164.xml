@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<factura>
+    <Cliente>
+        <nombre>sdfsdf</nombre>
+        <nif>123123</nif>
+        <telefono>123123</telefono>
+        <direccion>asdfsdf</direccion>
+    </Cliente>
+    <Empresa>
+        <nombre>Empresa S.L.</nombre>
+        <direccion>C/ Valeras, Aranjuez, 3</direccion>
+        <telefono>662010948</telefono>
+        <correo>dam2empresa@sl.com</correo>
+    </Empresa>
+    <Productos>
+        <Producto>
+            <Nombre>MANZANA</Nombre>
+            <Cantidad>132</Cantidad>
+            <Precio>1.5</Precio>
+            <Descuento>12.0</Descuento>
+            <Fecha>2025-01-21</Fecha>
+        </Producto>
+    </Productos>
+    <Total>174.24</Total>
+</factura>

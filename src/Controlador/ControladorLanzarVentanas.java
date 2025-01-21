@@ -237,14 +237,6 @@ public class ControladorLanzarVentanas implements ActionListener {
          impresionsita.cargarbotonimprimir();
     }  
      
-    /**
-     *Metodo que se encarga de limpiar el text area de productos
-     */
-    private void borrarAreaProductos() {
-        miVista.jTextAreaProductos("");
-        miVista.setCantidad(0);
-        miVista.setNombreCliente("");
-    }
     
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -270,7 +262,7 @@ public class ControladorLanzarVentanas implements ActionListener {
                 break;
             case "BORRAR":
                 System.out.println("Borrando el area de productos...");
-                borrarAreaProductos();
+                lanzarVentanaBorrar();
                 break;
             default:
                 System.out.print("Error" + e.getActionCommand());
