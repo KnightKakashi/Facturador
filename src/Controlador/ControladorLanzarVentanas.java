@@ -6,19 +6,10 @@ import Modelo.Producto;
 import Vista.Imprimir;
 import Vista.MiVista;
 import Vista.VentanaInicio;
-import java.awt.Color;
-import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -32,7 +23,6 @@ public class ControladorLanzarVentanas implements ActionListener {
     private MiVista miVista;
     private Imprimir impresionsita;
     private PlaceholderModelo miModelo;
-    private Object panel;
     
     /**
      * Constructor para inicializar el controlador
@@ -42,7 +32,6 @@ public class ControladorLanzarVentanas implements ActionListener {
      *@param impresionsita  
      *@param miModelo  
      */
-    
     public ControladorLanzarVentanas(VentanaInicio ventanaInicio, MiVista miVista, Imprimir impresionsita, PlaceholderModelo miModelo){
         this.ventanaInicio = ventanaInicio;
         this.miVista = miVista;
@@ -101,7 +90,7 @@ public class ControladorLanzarVentanas implements ActionListener {
         }, 900); //Volver a subir el tiempo de carga
     }
     
-      /**
+    /**
     * Metodo que lanza la ventana de impresion
     */
     public void lanzarVentanaFactura(){
@@ -110,7 +99,8 @@ public class ControladorLanzarVentanas implements ActionListener {
         impresionsita.setVisible(true); 
            
     }
-      /**
+    
+    /**
     * Metodo que recibe un producto y coloca un precio predeterminado a cada uno.
     */
     public String obtenerPrecio(String producto){
@@ -129,7 +119,8 @@ public class ControladorLanzarVentanas implements ActionListener {
                 return "";
         }
     }
-  /**
+    
+    /**
      *Metodo que se encarga de coger los datos de la ventana miVista,añadirlo a nuevo producto p
      * y a un cliente c,para meterlos en el constructor CestaCompra cestita usar el metodo generarXML al pulsar
      * el boton "GUARDAR"
@@ -176,6 +167,7 @@ public class ControladorLanzarVentanas implements ActionListener {
         impresionsita.setJLabelTelefono(telefono + "");
         impresionsita.setjLabelFecha(miModelo.cestita.getFecha());
     }
+    
      /**
      *Metodo que se encarga de comprobar que todos los campos de mivista han sido rellenados adecuadamente
      * devuelve un error como JoptionPane en el que avisa que los campos son invalidos
@@ -196,84 +188,34 @@ public class ControladorLanzarVentanas implements ActionListener {
     }
         return vacio;    
     }
-    /**
-     *Metodo que se encarga de coger los datos de la ventana miVista
-     * y añadirlos a la parte inferior que simula la cesta de la compra, esta funcion se usa al pulsar 
-     * el boton "AÑADIR AL CARRO"
-     */ 
-    /*public void rellenarProductosPDF(){
-        String producto = miVista.getProductoSeleccionado();
-        int cantidad = miVista.getCantidad();
-        double precio = miVista.getPrecioProducto();
-        double descuento = miVista.getDescuento();
-        int iva = 21;
-        double total = miModelo.cestita.calcularTotal();
-        String cantidad2 = " ";
-
-        switch (producto) {
-            case "MANZANA":
-                producto = "MANZANA                                         ";
-                break;
-            case "PERA":
-                producto = "PERA                                                  ";
-                break;
-            case "PLATANO":
-                producto = "PLATANO                                           ";
-                break;
-            case "MANGO":
-                producto = "MANGO                                              ";
-                break;
-            case "PIÑA":
-                producto = "PIÑA                                                  ";
-                break;
-        }
-
-        switch (Integer.toString(cantidad).length()) {
-            case 1:
-                cantidad2 = cantidad + "                          ";
-                break;
-            case 2:
-                cantidad2 = cantidad + "                         ";
-                break;
-            case 3:
-                cantidad2 = cantidad + "                      ";
-                break;
-            case 4:
-                cantidad2 = cantidad + "                    ";
-                break;
-            case 5:
-                cantidad2 = cantidad + "                  ";
-                break;
-        }
-        
-        String definitivo = "   " + producto + cantidad2 + precio + "                 " + descuento + "              " + iva + "           " + total + "€";
-
-        impresionsita.jTextAreaProductos(definitivo);
-    }*/
     
     /**
-     *Metodo que se encarga de recorrer los productos que recibe como parmetro
+     * Metodo que se encarga de recorrer los productos que recibe como parmetro
      * para colocarlos despues en el textarea del pdf.
-     * @param productos
      */
-   
-    public void rellenarProductosPDF(String[][] productos){
+    public void rellenarProductosPDF(){
         StringBuilder sb = new StringBuilder();
-            
-        for (String[] producto : productos) {
-        sb.append(String.format("%-20s %-10s %-10s %-10s %-10s %-10s%n", 
-            producto[0], producto[1], producto[2], producto[3], producto[4], producto[5]));
-        }
-        
-        impresionsita.jTextAreaProductos(miModelo.cestita.imprimirListaPDF());
-    }
     
-    public void relleno(){
+        // Crear el array con los productos
         String[][] productos = {
-            {miVista.getProductoSeleccionado(), miVista.getjTextFieldCantidad(), miVista.getjTextFieldPrecio(), miVista.getjTextFieldDescuento(), "21%", Double.toString(miModelo.cestita.calcularTotal())}
+            {
+                miVista.getProductoSeleccionado(),
+                miVista.getjTextFieldCantidad(),
+                miVista.getjTextFieldPrecio(),
+                miVista.getjTextFieldDescuento(),
+                "21%",
+                Double.toString(miModelo.cestita.calcularTotal())
+            }
         };
-        
-        rellenarProductosPDF(productos);
+
+        // Construir el texto formateado para el JTextArea
+        for (String[] producto : productos) {
+            sb.append(String.format("%-20s %-10s %-10s %-10s %-10s %-10s%n",
+                producto[0], producto[1], producto[2], producto[3], producto[4], producto[5]));
+        }
+
+        // Llenar el JTextArea con la lista formateada
+        impresionsita.jTextAreaProductos(miModelo.cestita.imprimirListaPDF());
     }
     
     /**
@@ -283,28 +225,38 @@ public class ControladorLanzarVentanas implements ActionListener {
      private void imprimirPDF() { 
          System.out.println("esta bien vas imprimir");
          impresionsita.cargarbotonimprimir();
-    }   
+    }  
+     
+    /**
+     *Metodo que se encarga de limpiar el text area de productos
+     */
+    private void limpiarAreaProductos() {
+        miVista.jTextAreaProductos("");
+        miVista.setCantidad(0);
+        miVista.setNombreCliente("");
+    }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch(e.getActionCommand())  {
+        switch(e.getActionCommand()) {
             case "AÑADIR AL CARRO":
                 System.out.println("Añadiendo al carro...");
                 rellenarCarro();
                 break;
             case "GUARDAR":
                 if(comprobarCampos()){
-                System.out.println("Guardando...");
-                }else{
-                relleno();
-                rellenarClientePDF(); 
-                System.out.println("Sacando factura...");
-                lanzarVentanaFactura() ;
+                    System.out.println("Guardando...");
+                }
+                else{
+                    rellenarProductosPDF();
+                    rellenarClientePDF(); 
+                    System.out.println("Sacando factura...");
+                    lanzarVentanaFactura() ;
                 }
                 break;
             case "IMPRIMIR":
-               System.out.println("Vas a Imprimir tu factura");
-               imprimirPDF() ;
+                System.out.println("Vas a Imprimir tu factura");
+                imprimirPDF() ;
                 break;
             case "LIMPIAR":
                 System.out.println("Limpiando el area de productos...");
@@ -314,14 +266,5 @@ public class ControladorLanzarVentanas implements ActionListener {
                 System.out.print("Error" + e.getActionCommand());
                 break;
         }
-    }
-
-    /**
-     *Metodo que se encarga de limpiar el text area de productos
-     */
-    private void limpiarAreaProductos() {
-        miVista.jTextAreaProductos("");
-        miVista.setCantidad(0);
-        miVista.setNombreCliente("");
     }
 }

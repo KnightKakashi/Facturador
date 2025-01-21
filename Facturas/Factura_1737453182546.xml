@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<factura>
+    <Cliente>
+        <nombre>aaa</nombre>
+        <nif>232</nif>
+        <telefono>23323</telefono>
+        <direccion>aaa</direccion>
+    </Cliente>
+    <Empresa>
+        <nombre>Empresa S.L.</nombre>
+        <direccion>C/ Valeras, Aranjuez, 3</direccion>
+        <telefono>662010948</telefono>
+        <correo>dam2empresa@sl.com</correo>
+    </Empresa>
+    <Productos>
+        <Producto>
+            <Nombre>MANZANA</Nombre>
+            <Cantidad>2</Cantidad>
+            <Precio>1.5</Precio>
+            <Descuento>2.0</Descuento>
+            <Fecha>2025-01-21</Fecha>
+        </Producto>
+        <Producto>
+            <Nombre>PERA</Nombre>
+            <Cantidad>4</Cantidad>
+            <Precio>1.3</Precio>
+            <Descuento>7.0</Descuento>
+            <Fecha>2025-01-21</Fecha>
+        </Producto>
+        <Producto>
+            <Nombre>PLATANO</Nombre>
+            <Cantidad>7</Cantidad>
+            <Precio>1.0</Precio>
+            <Descuento>15.0</Descuento>
+            <Fecha>2025-01-21</Fecha>
+        </Producto>
+    </Productos>
+    <Total>13.73</Total>
+</factura>
