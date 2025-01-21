@@ -4,6 +4,7 @@
  */
 package Modelo;
 
+import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
 /**
@@ -79,10 +80,15 @@ public class CestaCompra {
     
       /**
      * Elimina un producto de la lista de compra.
-     * @param p Producto a eliminar.
+     * @param indice
      */
-    public void eliminarProducto(Producto p){
-        lista.remove(p);
+    public void eliminarProducto(int indice) {
+        if (indice >= 0 && indice < lista.size()) { // Validar el índice
+         lista.remove(indice); // Eliminar por índice
+            JOptionPane.showMessageDialog(null, "Producto eliminado."); 
+        } else {
+         JOptionPane.showMessageDialog(null, "Índice inválido. No se puede eliminar el producto."); //mensaje de error
+        }
     }
 
      /**
