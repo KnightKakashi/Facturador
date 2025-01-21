@@ -33,7 +33,7 @@ public class Imprimir extends javax.swing.JFrame {
         initComponents();
         setTitle("Imprimir factura..");
         int numeroAleatorio = (int) (Math.random() * 100) + 1;
-        jLabelNumeroFactura.setText("000"+numeroAleatorio);
+        jLabelNumeroFactura.setText("000"+numeroAleatorio); 
     }
     
     /**
