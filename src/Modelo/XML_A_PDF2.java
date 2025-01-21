@@ -24,7 +24,7 @@ public class XML_A_PDF2 {
 
     /**
      * Convierte un archivo XML a un PDF con formato de factura.
-     *
+     * @auth Ioan Sorin Muntean
      * @param rutaArchivoPDF Ruta donde se generará el archivo PDF.
      * @throws Exception Si ocurre un error durante la conversión.
      */
