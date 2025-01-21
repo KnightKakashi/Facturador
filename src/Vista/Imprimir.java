@@ -18,19 +18,27 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 /**
- *
+ *Clase Imprimir.
+ * Clase que representa una ventana que permite visualizar y generar una factura.
  * @author GART
  */
+
 public class Imprimir extends javax.swing.JFrame {
 
     /**
-     * Creates new form Imprimir
+     *Constructor de la clase Imprimir.
+     *Inicializa los componentes e implementa el título.
      */
     public Imprimir() {
         initComponents();
         setTitle("Imprimir factura..");
     }
     
+    /**
+     * Método que maneja la generación y el envío de la factura a la impresora.
+     * Toma el contenido del panel, lo guarda como formato PNG y por último se
+     * envía la imagen a la impresora.
+     */
     public void cargarbotonimprimir() {
         jBtnImprimir.setVisible(false);
         try {
@@ -139,28 +147,54 @@ public class Imprimir extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-  public void setjLabelFecha(String fecha){
+    /**
+     * 
+     * @param fecha fecha que se muestra en JLabel.
+     */
+    public void setjLabelFecha(String fecha){
       jLabelFecha.setText(fecha);
-  }
+    }
+    
+    /**
+     * 
+     * @param telefono telefono que se muestra en el recuadro de texto.
+     */
     public void setJLabelTelefono(String telefono){
             jLabelTelefono.setText(telefono);   
-       }
+    }
 
-        public void setjLabel1NIF(String nif){
+    /**
+     * 
+     * @param nif NIF que se muestra en el recuadro de texto.
+     */
+    public void setjLabel1NIF(String nif){
             jLabel1NIF.setText(nif);   
-        }
+    }
 
-        public void setjLabelNombre(String nombre){
+    /**
+     * 
+     * @param nombre  Nombre que se muestra en el recuadro de texto.
+     */
+    public void setjLabelNombre(String nombre){
             jLabelNombre.setText(nombre);   
-        }
+    }
 
-        public void setjLabelDireccion(String direccion){
+    /**
+     * 
+     * @param direccion pasamos por parámetro la dirección que se muestra en el 
+     * recuadro de texto.
+     */
+    public void setjLabelDireccion(String direccion){
             jLabelDireccion.setText(direccion);   
-        }   
-        
-        public void jTextAreaProductos(String texto){
+    }   
+      
+    /**
+     * 
+     * @param texto texto que se muestra en el TextArea sobre los productos.
+     */
+    public void jTextAreaProductos(String texto){
             jTextAreaProductos.setText(texto);
-        }
+    }
         
 
 
@@ -180,7 +214,7 @@ public class Imprimir extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
  /**
      * Asociamos un ActionListener para el botón Imprimir.
-     * @param l escuchador que gestiona los eventos del botón Guardar.
+     * @param l escuchador que gestiona los eventos del botón Imprimir.
      */
     public void jBtnImprimirpdf(ActionListener l) {
         jBtnImprimir.addActionListener(l);

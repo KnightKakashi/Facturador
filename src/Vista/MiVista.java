@@ -22,7 +22,8 @@ public class MiVista extends javax.swing.JFrame {
 
     /**
      * Constructor de la clase MiVista.
-     * Carga un icono para la ventana.
+     * Inicializa los componentes de la interfaz, carga un ícono para la ventana
+     * y configura un JComboBox para mostrar productos con imágenes.
      */
     public MiVista() {
        initComponents();
@@ -30,19 +31,31 @@ public class MiVista extends javax.swing.JFrame {
        configurarComboBoxConImagenes();
     }
 
+    /**
+     * Carga un ícono elegido desde el archivo para que salga en la ventana.
+     * Si no se encuentra el archivo, salta un mensaje de error.
+     */
     private void cargarIconoEmpresa() {
         try {
+            // se carga el ícono desde la carpeta recursos del proyecto.
             ImageIcon imgIcon = new ImageIcon(getClass().getResource("/Recursos/IconoEmpresa.png"));
             if (imgIcon != null) {
+                // si se carga correctamente, se añade a la ventana.
                 this.setIconImage(imgIcon.getImage());
             } else {
-                System.err.println("No se pudo cargar el icono desde la ruta especificada.");
+                 // si no se puede cargar, nos saltaría un mensaje de error.
+                System.out.println("No se pudo cargar el icono desde la ruta especificada.");
             }
         } catch(NullPointerException e) {
-            System.err.println("Icono no encontrado: " + e.getMessage());
+            // si el archivo no existe, muestra un mensaje de error.
+            System.out.println("Icono no encontrado: " + e.getMessage());
         }
     }
 
+    /**
+     * Configurar un JComboBox para que se muestre una lista de productos junto 
+     * con su imagen correspondiente.
+     */
     private void configurarComboBoxConImagenes() {
         String[] productos = {"MANZANA", "PERA", "PLATANO", "MANGO", "PIÑA"};
         ImageIcon[] iconosProductos = {  
@@ -57,6 +70,11 @@ public class MiVista extends javax.swing.JFrame {
         jComboBoxNombreProducto.setRenderer((ListCellRenderer<? super String>) new JComboBoxImagenes(productos, iconosProductos));
     }
 
+    /**
+     * Cargar una imagen desde el archivo con la ruta.
+     * @param ruta ruta relativa del archivo que hay en el proyecto.
+     * @return un objeto ImageIcon con la imagen cargada
+     */
     private ImageIcon cargarImagen(String ruta) {
         try {
             return new ImageIcon(getClass().getResource(ruta));
@@ -373,6 +391,10 @@ public class MiVista extends javax.swing.JFrame {
         jButtonAñadir.addActionListener(l); 
     }
     
+    /**
+     * Asociamos un ActionListener para el botón Limpiar.
+     * @param l escuchador que gestiona los eventos del botón Limpiar.
+     */
     public void jButtonLimpiar(ActionListener l) {
         jButtonLimpiar.addActionListener(l); 
     }
@@ -384,6 +406,10 @@ public class MiVista extends javax.swing.JFrame {
     public void jTextAreaProductos(String texto){
         jTextAreaProductos.setText(texto);
     }
+    /**
+     * Método que implementa el texto en un JTextField
+     * @param texto el texto que se mostrará.
+     */
     public void jTextFieldCantidad(String texto) {   
         jTextFieldCantidad.setText(texto);
     }
@@ -460,17 +486,35 @@ public class MiVista extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Obtiene el texto que muestra el precio.
+     * @return Devuelve el precio.
+     */
     public String getjTextFieldPrecio(){
         return jTextFieldPrecio.getText();
     }
     
-        public String getjTextFieldDescuento() {
+    /**
+     * Obtiene el texto que muestra el descuento.
+     * @return Devuelve el descuento.
+     */
+    public String getjTextFieldDescuento() {
         return jTextFieldDescuento.getText();
-        }
-        public String getjTextFieldCantidad() {
+    }
+    
+    /**
+     * 
+     * @return Devuelve la cantidad obtenida del JTextField.
+     */
+    public String getjTextFieldCantidad() {
         return jTextFieldCantidad.getText();
-        }
-        public String getjTextAreaProductos() {
+    }
+    
+    /**
+     * 
+     * @return Devuelve los productos que se obtienen del JTextArea.
+     */
+    public String getjTextAreaProductos() {
         return jTextAreaProductos.getText();
     }
     /**
@@ -513,6 +557,10 @@ public class MiVista extends javax.swing.JFrame {
         jTextFieldDescuento.setText(String.valueOf(descuento)); // Convierte el Double a String para el JTextField
     }
 
+    /**
+     * 
+     * @param nombre pasamos por parámetro el nombre de tipo String.
+     */
     public void setNombreCliente(String nombre) {
         jTextFieldNombreCliente.setText(nombre); 
     }
