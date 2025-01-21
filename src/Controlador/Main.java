@@ -12,6 +12,7 @@ import Modelo.Producto;
 import Vista.Imprimir;
 import Vista.VentanaInicio;
 import Vista.MiVista;
+import Vista.VentanaBorrar;
 
 /**
  *
@@ -28,6 +29,7 @@ public class Main {
         VentanaInicio ventanaInicio = new VentanaInicio();
         MiVista miVista = new MiVista();
         Imprimir impresionsita = new Imprimir();
+        VentanaBorrar borrar = new VentanaBorrar();
         //Clases del package Modelo
         CestaCompra miCesta = new CestaCompra();
         Cliente miCliente = new Cliente();
@@ -35,7 +37,7 @@ public class Main {
         Producto miProducto = new Producto();
         
         PlaceholderModelo miModelo = new PlaceholderModelo(miCesta, miCliente, miGeneradorXML, miProducto);       
-        ControladorLanzarVentanas controladorLanzarVentanas = new ControladorLanzarVentanas(ventanaInicio, miVista,impresionsita, miModelo);
+        ControladorLanzarVentanas controladorLanzarVentanas = new ControladorLanzarVentanas(ventanaInicio, miVista,impresionsita, borrar, miModelo);
         
         controladorLanzarVentanas.lanzarPrograma();
     }  

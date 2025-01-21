@@ -118,7 +118,7 @@ public class MiVista extends javax.swing.JFrame {
         jButtonAñadir = new javax.swing.JButton();
         jLabelLote = new javax.swing.JLabel();
         jButtonGuardar = new javax.swing.JButton();
-        jButtonLimpiar = new javax.swing.JButton();
+        jButtonBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FACTURA");
@@ -178,7 +178,7 @@ public class MiVista extends javax.swing.JFrame {
                     .addComponent(jTextFieldTelefono)
                     .addComponent(jTextFieldDireccion, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextFieldNif))
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addContainerGap(206, Short.MAX_VALUE))
         );
         jPanelClienteLayout.setVerticalGroup(
             jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,11 +259,11 @@ public class MiVista extends javax.swing.JFrame {
         jButtonGuardar.setToolTipText("Exportar la factura en formato PDF y XML.");
         jButtonGuardar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        jButtonLimpiar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jButtonLimpiar.setMnemonic('g');
-        jButtonLimpiar.setText("LIMPIAR");
-        jButtonLimpiar.setToolTipText("Exportar la factura en formato PDF y XML.");
-        jButtonLimpiar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jButtonBorrar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jButtonBorrar.setMnemonic('g');
+        jButtonBorrar.setText("BORRAR");
+        jButtonBorrar.setToolTipText("Exportar la factura en formato PDF y XML.");
+        jButtonBorrar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         javax.swing.GroupLayout jPanelProductoLayout = new javax.swing.GroupLayout(jPanelProducto);
         jPanelProducto.setLayout(jPanelProductoLayout);
@@ -294,7 +294,7 @@ public class MiVista extends javax.swing.JFrame {
                                 .addGap(31, 31, 31)
                                 .addComponent(jButtonGuardar)))
                         .addGap(32, 32, 32)
-                        .addComponent(jButtonLimpiar)))
+                        .addComponent(jButtonBorrar)))
                 .addGap(95, 95, Short.MAX_VALUE))
             .addGroup(jPanelProductoLayout.createSequentialGroup()
                 .addContainerGap()
@@ -326,7 +326,7 @@ public class MiVista extends javax.swing.JFrame {
                 .addGroup(jPanelProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAñadir)
                     .addComponent(jButtonGuardar)
-                    .addComponent(jButtonLimpiar))
+                    .addComponent(jButtonBorrar))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPaneCarro, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
                 .addGap(17, 17, 17))
@@ -341,8 +341,8 @@ public class MiVista extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAñadir;
+    private javax.swing.JButton jButtonBorrar;
     private javax.swing.JButton jButtonGuardar;
-    private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JComboBox<String> jComboBoxNombreProducto;
     private javax.swing.JLabel jLabelCantidad;
     private javax.swing.JLabel jLabelDescuento;
@@ -367,14 +367,6 @@ public class MiVista extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldPrecio;
     private javax.swing.JTextField jTextFieldTelefono;
     // End of variables declaration//GEN-END:variables
-
-    /**
-     * Asociamos un ActionListener para el botón GuardarCliente
-     * @param l escuchador que gestiona los eventos del botón GuardarCliente
-     */
-    public void jButtonGuardarCliente(ActionListener l) {
-       
-    }
     
     /**
      * Asociamos un ActionListener para el botón Guardar.
@@ -396,7 +388,7 @@ public class MiVista extends javax.swing.JFrame {
      * @param l escuchador que gestiona los eventos del botón Limpiar.
      */
     public void jButtonLimpiar(ActionListener l) {
-        jButtonLimpiar.addActionListener(l); 
+        jButtonBorrar.addActionListener(l); 
     }
     
     /**

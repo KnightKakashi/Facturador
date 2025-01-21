@@ -5,6 +5,7 @@ import Modelo.PlaceholderModelo;
 import Modelo.Producto;
 import Vista.Imprimir;
 import Vista.MiVista;
+import Vista.VentanaBorrar;
 import Vista.VentanaInicio;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +23,7 @@ public class ControladorLanzarVentanas implements ActionListener {
     private VentanaInicio ventanaInicio;
     private MiVista miVista;
     private Imprimir impresionsita;
+    private VentanaBorrar borrar;
     private PlaceholderModelo miModelo;
     
     /**
@@ -32,11 +34,12 @@ public class ControladorLanzarVentanas implements ActionListener {
      *@param impresionsita  
      *@param miModelo  
      */
-    public ControladorLanzarVentanas(VentanaInicio ventanaInicio, MiVista miVista, Imprimir impresionsita, PlaceholderModelo miModelo){
+    public ControladorLanzarVentanas(VentanaInicio ventanaInicio, MiVista miVista, Imprimir impresionsita, VentanaBorrar borrar, PlaceholderModelo miModelo){
         this.ventanaInicio = ventanaInicio;
         this.miVista = miVista;
+        this.impresionsita = impresionsita;
+        this.borrar = borrar;
         this.miModelo = miModelo;
-        this.impresionsita= impresionsita;
         
         System.out.println("Iniciando constructor ControladorLanzarVentanas...");
         
@@ -46,7 +49,6 @@ public class ControladorLanzarVentanas implements ActionListener {
     public void escuchadores(ActionListener listener){
         miVista.jButtonGuardar(this);
         miVista.jButtonAñadir(this);
-        miVista.jButtonGuardarCliente(this);
         miVista.jButtonLimpiar(this);
         impresionsita.jBtnImprimirpdf(this);
         miVista.getjComboBoxNombreProducto().addActionListener(e -> {
@@ -101,6 +103,15 @@ public class ControladorLanzarVentanas implements ActionListener {
     }
     
     /**
+     * Metodo que lanza la ventana de borrar
+     */
+    public void lanzarVentanaBorrar(){
+        System.out.println("Iniciando VentanaBorrar");
+       
+        borrar.setVisible(true);
+    }
+    
+    /**
     * Metodo que recibe un producto y coloca un precio predeterminado a cada uno.
     */
     public String obtenerPrecio(String producto){
@@ -145,7 +156,7 @@ public class ControladorLanzarVentanas implements ActionListener {
         miModelo.cestita.agregarProducto(p);
         miModelo.cestita.setCliente(c);
         
-        miModelo.genxml.generarFacturaXML(miModelo.cestita,"facturasXML.xml");
+        miModelo.genxml.generarFacturaXML(miModelo.cestita, "facturasXML.xml");
         miVista.jTextAreaProductos(miModelo.cestita.imprimirLista());         
     }
     
@@ -160,7 +171,6 @@ public class ControladorLanzarVentanas implements ActionListener {
         int telefono = miVista.getjTextFieldTelefono();
         String direccion = miVista.getjTextFieldDireccion();
         
-        //Cliente c = new Cliente(nombre, nif, telefono, direccion);
         impresionsita.setjLabelNombre(nombre);
         impresionsita.setjLabelDireccion(direccion);
         impresionsita.setjLabel1NIF(nif);
@@ -168,10 +178,10 @@ public class ControladorLanzarVentanas implements ActionListener {
         impresionsita.setjLabelFecha(miModelo.cestita.getFecha());
     }
     
-     /**
-     *Metodo que se encarga de comprobar que todos los campos de mivista han sido rellenados adecuadamente
+    /**
+     * Metodo que se encarga de comprobar que todos los campos de mivista han sido rellenados adecuadamente
      * devuelve un error como JoptionPane en el que avisa que los campos son invalidos
-     */
+    */
     public boolean comprobarCampos(){
         boolean vacio = false;
         if(miVista.getjTextFieldDireccion().isEmpty() ||
@@ -230,7 +240,7 @@ public class ControladorLanzarVentanas implements ActionListener {
     /**
      *Metodo que se encarga de limpiar el text area de productos
      */
-    private void limpiarAreaProductos() {
+    private void borrarAreaProductos() {
         miVista.jTextAreaProductos("");
         miVista.setCantidad(0);
         miVista.setNombreCliente("");
@@ -258,9 +268,9 @@ public class ControladorLanzarVentanas implements ActionListener {
                 System.out.println("Vas a Imprimir tu factura");
                 imprimirPDF() ;
                 break;
-            case "LIMPIAR":
-                System.out.println("Limpiando el area de productos...");
-                limpiarAreaProductos();
+            case "BORRAR":
+                System.out.println("Borrando el area de productos...");
+                borrarAreaProductos();
                 break;
             default:
                 System.out.print("Error" + e.getActionCommand());
