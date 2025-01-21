@@ -98,8 +98,7 @@ public class ControladorLanzarVentanas implements ActionListener {
     public void lanzarVentanaFactura(){
         System.out.println("Iniciando Ventana de Facturacion");
        
-        impresionsita.setVisible(true); 
-           
+        impresionsita.setVisible(true);
     }
     
     /**
@@ -107,8 +106,25 @@ public class ControladorLanzarVentanas implements ActionListener {
      */
     public void lanzarVentanaBorrar(){
         System.out.println("Iniciando VentanaBorrar");
-       
+        
         borrar.setVisible(true);
+        
+        borrar.getjComboBoxBorrar().removeAll();
+        
+        for(Producto p : miModelo.cestita.getLista()){
+            borrar.getjComboBoxBorrar().addItem(p.toString());
+        }
+    }
+    
+    public void eliminarProdcutoSeleccionado(){
+        int indice = borrar.getjComboBoxBorrar().getSelectedIndex();
+        
+        miModelo.cestita.eliminarProducto(indice);
+        
+        miVista.jTextAreaProductos("");
+        miVista.jTextAreaProductos(miModelo.cestita.imprimirLista());
+        
+        borrar.getjComboBoxBorrar().removeAll();
     }
     
     /**
@@ -263,6 +279,10 @@ public class ControladorLanzarVentanas implements ActionListener {
             case "BORRAR":
                 System.out.println("Borrando el area de productos...");
                 lanzarVentanaBorrar();
+                break;
+            case "BORRAR ELEMENTO":
+                System.out.println("Borrando...");
+                eliminarProdcutoSeleccionado();
                 break;
             default:
                 System.out.print("Error" + e.getActionCommand());

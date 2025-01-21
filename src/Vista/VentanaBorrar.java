@@ -18,7 +18,7 @@ public class VentanaBorrar extends javax.swing.JFrame {
     public VentanaBorrar() {
         initComponents();
         
-        setSize(300, 150);
+        setSize(550, 480);
         setResizable(false);
     }
 
@@ -28,35 +28,33 @@ public class VentanaBorrar extends javax.swing.JFrame {
 
         jComboBoxBorrar = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        jButtonBorrar = new javax.swing.JButton();
+        jButtonBorrarElemento = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Borrar porducto");
-
-        jComboBoxBorrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("Que articulos desea borrar:");
 
-        jButtonBorrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButtonBorrar.setText("BORRAR");
+        jButtonBorrarElemento.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonBorrarElemento.setText("BORRAR ELEMENTO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonBorrar)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(32, 32, 32)
-                            .addComponent(jLabel1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(33, 33, 33)
-                            .addComponent(jComboBoxBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButtonBorrarElemento)
+                            .addComponent(jComboBoxBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -66,7 +64,7 @@ public class VentanaBorrar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jComboBoxBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonBorrar)
+                .addComponent(jButtonBorrarElemento)
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -74,7 +72,7 @@ public class VentanaBorrar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBorrar;
+    private javax.swing.JButton jButtonBorrarElemento;
     private javax.swing.JComboBox<String> jComboBoxBorrar;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
