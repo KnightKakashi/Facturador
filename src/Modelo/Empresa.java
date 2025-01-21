@@ -109,4 +109,13 @@ public class Empresa {
         System.out.println("Correo Electrónico: " + correo);
         System.out.println(" ");
     }
+/**
+ * Metodo toString por si fuese necesario ya que el comapñero creo una imopresion por panytalla unicamente
+ * @return cadena con valores ded la empresa
+ */
+    @Override
+    public String toString() {
+        return nombre + ", " + nif + ", " + direccion + ", " + codigoPostal + ", "+ pais + ", " + telefono + ", " + correo;
+    }
+    
 }
