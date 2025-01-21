@@ -513,5 +513,8 @@ public class MiVista extends javax.swing.JFrame {
         jTextFieldDescuento.setText(String.valueOf(descuento)); // Convierte el Double a String para el JTextField
     }
 
-    
+    public void setNombreCliente(String nombre) {
+        jTextFieldNombreCliente.setText(nombre); 
+    }
+
 }

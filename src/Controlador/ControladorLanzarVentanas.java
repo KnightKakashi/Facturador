@@ -320,5 +320,7 @@ public class ControladorLanzarVentanas implements ActionListener {
      */
     private void limpiarAreaProductos() {
         miVista.jTextAreaProductos("");
+        miVista.setCantidad(0);
+        miVista.setNombreCliente("");
     }
 }
