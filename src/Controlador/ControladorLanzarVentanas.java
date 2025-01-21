@@ -101,13 +101,18 @@ public class ControladorLanzarVentanas implements ActionListener {
         }, 900); //Volver a subir el tiempo de carga
     }
     
+      /**
+    * Metodo que lanza la ventana de impresion
+    */
     public void lanzarVentanaFactura(){
         System.out.println("Iniciando Ventana de Facturacion");
        
         impresionsita.setVisible(true); 
            
     }
-    
+      /**
+    * Metodo que recibe un producto y coloca un precio predeterminado a cada uno.
+    */
     public String obtenerPrecio(String producto){
         switch(producto){
             case "MANZANA":
@@ -124,7 +129,11 @@ public class ControladorLanzarVentanas implements ActionListener {
                 return "";
         }
     }
-  
+  /**
+     *Metodo que se encarga de coger los datos de la ventana miVista,añadirlo a nuevo producto p
+     * y a un cliente c,para meterlos en el constructor CestaCompra cestita usar el metodo generarXML al pulsar
+     * el boton "GUARDAR"
+     */ 
     public void rellenarCarro() {
         miVista.jTextAreaProductos(" ");
          
@@ -166,7 +175,10 @@ public class ControladorLanzarVentanas implements ActionListener {
         impresionsita.setjLabel1NIF(nif);
         impresionsita.setJLabelTelefono(telefono + "");
     }
-    
+     /**
+     *Metodo que se encarga de comprobar que todos los campos de mivista han sido rellenados adecuadamente
+     * devuelve un error como JoptionPane en el que avisa que los campos son invalidos
+     */
     public boolean comprobarCampos(){
         boolean vacio = false;
         if(miVista.getjTextFieldDireccion().isEmpty() ||
@@ -238,6 +250,12 @@ public class ControladorLanzarVentanas implements ActionListener {
         impresionsita.jTextAreaProductos(definitivo);
     }*/
     
+    /**
+     *Metodo que se encarga de recorrer los productos que recibe como parmetro
+     * para colocarlos despues en el textarea del pdf.
+     * @param productos
+     */
+   
     public void rellenarProductosPDF(String[][] productos){
         StringBuilder sb = new StringBuilder();
             
@@ -297,6 +315,9 @@ public class ControladorLanzarVentanas implements ActionListener {
         }
     }
 
+    /**
+     *Metodo que se encarga de limpiar el text area de productos
+     */
     private void limpiarAreaProductos() {
         miVista.jTextAreaProductos("");
     }
