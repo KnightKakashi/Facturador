@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Factura>
+    <Cliente>
+        <Nombre>Juan</Nombre>
+        <NIF>5565645Ñ</NIF>
+        <Telefono>657889785</Telefono>
+        <Direccion>Ave Del Paraiso</Direccion>
+    </Cliente>
+    <Productos>
+        <Producto>
+            <Nombre>Fairy0VERSION0</Nombre>
+            <Cantidad>7</Cantidad>
+            <Precio>8.0</Precio>
+            <Descuento>0.0</Descuento>
+            <Fecha>2025-01-15</Fecha>
+        </Producto>
+        <Producto>
+            <Nombre>Fairy1VERSION1</Nombre>
+            <Cantidad>8</Cantidad>
+            <Precio>7.0</Precio>
+            <Descuento>1.0</Descuento>
+            <Fecha>2025-01-15</Fecha>
+        </Producto>
+        <Producto>
+            <Nombre>Fairy2VERSION2</Nombre>
+            <Cantidad>9</Cantidad>
+            <Precio>6.0</Precio>
+            <Descuento>2.0</Descuento>
+            <Fecha>2025-01-15</Fecha>
+        </Producto>
+        <Producto>
+            <Nombre>Fairy3VERSION3</Nombre>
+            <Cantidad>10</Cantidad>
+            <Precio>5.0</Precio>
+            <Descuento>3.0</Descuento>
+            <Fecha>2025-01-15</Fecha>
+        </Producto>
+        <Producto>
+            <Nombre>Fairy4VERSION4</Nombre>
+            <Cantidad>11</Cantidad>
+            <Precio>4.0</Precio>
+            <Descuento>4.0</Descuento>
+            <Fecha>2025-01-15</Fecha>
+        </Producto>
+    </Productos>
+    <Total>255.1</Total>
+</Factura>

@@ -124,16 +124,30 @@ public class GeneradorXML {
             total.appendChild(doc.createTextNode(String.valueOf(cesta.calcularTotal())));
             root.appendChild(total);
 
-            //Guardar en archivo
+            // Crear el directorio "Facturas" si no existe
+            String rutaDirectorio = "Facturas";
+            File directorio = new File(rutaDirectorio);
+
+            // Crear los directorios necesarios
+            if (directorio.mkdirs()) {
+                System.out.println("Directorios creados: " + directorio.getAbsolutePath());
+            } else {
+                System.out.println("No se pudieron crear los directorios o ya existen.");
+            }
+
+            // Generar un nombre único para la factura
+            String nombreArchivo = "Factura_" + System.currentTimeMillis() + ".xml";
+            File archivoFactura = new File(directorio, nombreArchivo);
+
+            // Guardar en archivo
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File(rutaArchivo));
+            StreamResult result = new StreamResult(archivoFactura);
             transformer.transform(source, result);
 
-            System.out.println("XML generado correctamente: " + rutaArchivo);
-
+            System.out.println("XML generado correctamente: " + archivoFactura.getAbsolutePath());
         } catch(Exception e) {
             e.printStackTrace();
         }
