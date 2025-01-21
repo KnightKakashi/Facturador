@@ -174,6 +174,7 @@ public class ControladorLanzarVentanas implements ActionListener {
         impresionsita.setjLabelDireccion(direccion);
         impresionsita.setjLabel1NIF(nif);
         impresionsita.setJLabelTelefono(telefono + "");
+        impresionsita.setjLabelFecha(miModelo.cestita.getFecha());
     }
      /**
      *Metodo que se encarga de comprobar que todos los campos de mivista han sido rellenados adecuadamente
@@ -264,7 +265,7 @@ public class ControladorLanzarVentanas implements ActionListener {
             producto[0], producto[1], producto[2], producto[3], producto[4], producto[5]));
         }
         
-        impresionsita.jTextAreaProductos(sb.toString());
+        impresionsita.jTextAreaProductos(miModelo.cestita.imprimirListaPDF());
     }
     
     public void relleno(){

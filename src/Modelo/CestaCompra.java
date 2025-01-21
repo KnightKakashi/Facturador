@@ -39,6 +39,13 @@ public class CestaCompra {
         this.cliente = cliente;
         this.lista = new ArrayList<>();
     }
+    /**
+     * Metodo trampeado ya que la fecha se encuentar en el prodcuto y no en la lista
+     * @return el string de la fecha
+     */
+    public String getFecha(){
+       return lista.get(0).getFecha();
+    }
 
      /**
      * Obtiene el cliente asociado a la cesta.
@@ -92,6 +99,18 @@ public class CestaCompra {
         }
         
         return res + ("Total: " + Double.toString(calcularTotal()) +  "€");
+    }
+        /**
+     * Metodo para imprimir los productos que se añadan a la lista
+     * @return un String con el listado de los prodcutos añadidos
+     */
+    public String imprimirListaPDF(){
+       String res = "";
+        for(Producto p: lista){
+            res = res + p.toStringPDF()+ "\n";
+        }
+        
+        return res +"\n" + ("Total: " + Double.toString(calcularTotal()) +  "€");
     }
     /**
      * metodo para calcualr el precio final de la listad e compra

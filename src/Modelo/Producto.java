@@ -67,6 +67,8 @@ public class Producto {
     public String getNombre() {
         return nombre;
     }
+    
+  
 
       /**
      * Establece el nombre del producto.
@@ -171,6 +173,15 @@ public class Producto {
                 " | Descuento: " + descuento + "%" + 
                 " | Fecha: " + fecha;
     }
+    /**
+     * Metodo paar dar el formato a al texo de los productos
+     * @return cadena de texto con la informacion de los productos
+     */
+     public String toStringPDF(){
+         Double precioD  =precioDescuento();
+        return  nombre + "\t\t" +cantidad +"            "+ String.format("%.2f", precio) +  "€"  +"     "+ String.format("%.2f", precioDescuento()) + "       21%     " + String.format("%.2f", precioD)+"€";
+    }
+    
     
     /**
      * metodo para sacar la fecha actual del ordenador

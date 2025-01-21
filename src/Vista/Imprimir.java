@@ -139,7 +139,9 @@ public class Imprimir extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-  
+  public void setjLabelFecha(String fecha){
+      jLabelFecha.setText(fecha);
+  }
     public void setJLabelTelefono(String telefono){
             jLabelTelefono.setText(telefono);   
        }
