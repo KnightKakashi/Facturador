@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <factura>
     <Cliente>
-        <nombre>Jose Joaquin</nombre>
-        <nif>12345678A</nif>
-        <telefono>987654321</telefono>
-        <direccion>opkopkoopkjokjmomkum</direccion>
+        <nombre>wwww</nombre>
+        <nif>1111</nif>
+        <telefono>111</telefono>
+        <direccion>www</direccion>
     </Cliente>
     <Empresa>
         <nombre>Empresa S.L.</nombre>
@@ -15,18 +15,18 @@
     <Productos>
         <Producto>
             <Nombre>MANZANA</Nombre>
-            <Cantidad>3</Cantidad>
+            <Cantidad>1</Cantidad>
             <Precio>1.5</Precio>
-            <Descuento>3.0</Descuento>
+            <Descuento>1.0</Descuento>
             <Fecha>2025-01-21</Fecha>
         </Producto>
         <Producto>
             <Nombre>PERA</Nombre>
-            <Cantidad>3</Cantidad>
+            <Cantidad>1</Cantidad>
             <Precio>1.3</Precio>
-            <Descuento>3.0</Descuento>
+            <Descuento>1.0</Descuento>
             <Fecha>2025-01-21</Fecha>
         </Producto>
     </Productos>
-    <Total>8.15</Total>
+    <Total>2.77</Total>
 </factura>

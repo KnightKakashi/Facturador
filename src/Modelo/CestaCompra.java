@@ -68,7 +68,13 @@ public class CestaCompra {
      * @param p Producto a agregar.
      */
     public void agregarProducto(Producto p){
-        lista.add(p);
+        for (Producto productoExistente : lista) {
+        if (productoExistente.getNombre().equals(p.getNombre())) {
+            productoExistente.setCantidad(productoExistente.getCantidad() + p.getCantidad());
+            return;
+        }
+    }
+    lista.add(p); // Si no existe, lo añadimos como un nuevo producto
     }
     
       /**
