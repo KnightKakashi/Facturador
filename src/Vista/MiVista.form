@@ -361,12 +361,13 @@
                   <Font name="Segoe UI" size="14" style="2"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="5">
+                  <StringArray count="6">
                     <StringItem index="0" value="MANZANA"/>
                     <StringItem index="1" value="PERA"/>
                     <StringItem index="2" value="PLATANO"/>
                     <StringItem index="3" value="MANGO"/>
                     <StringItem index="4" value="PI&#xd1;A"/>
+                    <StringItem index="5" value="                                  ."/>
                   </StringArray>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

@@ -44,8 +44,7 @@ public class MiVista extends javax.swing.JFrame {
 
     private void configurarComboBoxConImagenes() {
         String[] productos = {"MANZANA", "PERA", "PLATANO", "MANGO", "PIÑA"};
-        ImageIcon[] iconosProductos = {
-            //  
+        ImageIcon[] iconosProductos = {  
 
             cargarImagen("/Recursos/manzana.png"),
             cargarImagen("/Recursos/pera.png"),
@@ -203,7 +202,7 @@ public class MiVista extends javax.swing.JFrame {
         jTextFieldCantidad.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jComboBoxNombreProducto.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jComboBoxNombreProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MANZANA", "PERA", "PLATANO", "MANGO", "PIÑA" }));
+        jComboBoxNombreProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MANZANA", "PERA", "PLATANO", "MANGO", "PIÑA", "                                  ." }));
         jComboBoxNombreProducto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jTextFieldPrecio.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
