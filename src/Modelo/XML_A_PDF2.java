@@ -241,7 +241,7 @@ public class XML_A_PDF2 {
         return "<Cliente><Nombre>" + nombreCliente + "</Nombre><NIF>" + nifCliente + "</NIF><Telefono>" + telefonoCliente + "</Telefono><Direccion>" + direccionCliente + "</Direccion></Cliente>"
                 + "<Productos>" + productosBuilder + "</Productos><Total>" + total + "</Total>";
     }
-//}
+}
 
 
 
@@ -296,24 +296,24 @@ public class XML_A_PDF2 {
 //
 //java
 //public class Main {
-    public static void main(String[] args) {
-        try {
-            // Crear una instancia del conversor
-            XML_A_PDF2 converter = new XML_A_PDF2();
-
-            // Rutas de los archivos
-            String rutaArchivoPDF = "salida.pdf";
-
-            // Convertir el archivo XML a PDF
-            converter.convertirXMLAPDF(rutaArchivoPDF);
-
-            System.out.println("Conversión completada.");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-}
-//Conclusión
+//    public static void main(String[] args) {
+//        try {
+//            // Crear una instancia del conversor
+//            XML_A_PDF2 converter = new XML_A_PDF2();
+//
+//            // Rutas de los archivos
+//            String rutaArchivoPDF = "salida.pdf";
+//
+//            // Convertir el archivo XML a PDF
+//            converter.convertirXMLAPDF(rutaArchivoPDF);
+//
+//            System.out.println("Conversión completada.");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+//}
+////Conclusión
 //La clase XML_A_PDF2 está diseñada para convertir archivos XML en documentos PDF con formato de factura. 
 //Puedes personalizar los datos de la empresa, la estructura del PDF y añadir nuevos elementos según tus necesidades.
 //Simplemente llama a las funciones proporcionadas y modifica las secciones del código como se ha mostrado en los ejemplos.
