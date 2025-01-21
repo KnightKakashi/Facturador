@@ -32,6 +32,8 @@ public class Imprimir extends javax.swing.JFrame {
     public Imprimir() {
         initComponents();
         setTitle("Imprimir factura..");
+        int numeroAleatorio = (int) (Math.random() * 100) + 1;
+        jLabelNumeroFactura.setText("000"+numeroAleatorio);
     }
     
     /**
@@ -77,7 +79,6 @@ public class Imprimir extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(200, 20));
-        setPreferredSize(new java.awt.Dimension(1090, 944));
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(1056, 816));
 
@@ -96,13 +97,13 @@ public class Imprimir extends javax.swing.JFrame {
         jTextAreaProductos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel.add(jTextAreaProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 580, 820, 280));
 
-        jLabelNumeroFactura.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
+        jLabelNumeroFactura.setFont(new java.awt.Font("Tahoma", 0, 23)); // NOI18N
         jLabelNumeroFactura.setText("jLabel2");
-        panel.add(jLabelNumeroFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 150, 30));
+        panel.add(jLabelNumeroFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 150, 30));
 
         jLabelFecha.setFont(new java.awt.Font("Tahoma", 0, 23)); // NOI18N
         jLabelFecha.setText("jLabel3");
-        panel.add(jLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, 250, 30));
+        panel.add(jLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 250, 30));
 
         jPanel1.setBackground(new java.awt.Color(245, 245, 239));
         jPanel1.setLayout(new java.awt.GridLayout(5, 0));
