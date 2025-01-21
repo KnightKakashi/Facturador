@@ -37,7 +37,7 @@ public class GeneradorXML {
      * 
      * @throws Exception Si ocurre un error al generar o guardar el archivo XML.
      */
-    public void generarFacturaXML(CestaCompra cesta, String rutaArchivo) { 
+    public void generarFacturaXML(CestaCompra cesta) { 
         
         try {
             //Crear documento
