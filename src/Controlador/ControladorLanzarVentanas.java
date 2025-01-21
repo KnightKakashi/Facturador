@@ -156,7 +156,7 @@ public class ControladorLanzarVentanas implements ActionListener {
         miModelo.cestita.agregarProducto(p);
         miModelo.cestita.setCliente(c);
         
-        miModelo.genxml.generarFacturaXML(miModelo.cestita, "facturasXML.xml");
+        miModelo.genxml.generarFacturaXML(miModelo.cestita);
         miVista.jTextAreaProductos(miModelo.cestita.imprimirLista());         
     }
     
