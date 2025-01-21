@@ -107,5 +107,6 @@ public class Empresa {
         System.out.println("País: " + pais);
         System.out.println("Teléfono: " + telefono);
         System.out.println("Correo Electrónico: " + correo);
+        System.out.println(" ");
     }
 }
