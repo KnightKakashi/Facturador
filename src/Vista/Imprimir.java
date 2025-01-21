@@ -79,6 +79,7 @@ public class Imprimir extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(200, 20));
+        setResizable(false);
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(1056, 816));
 
@@ -97,7 +98,7 @@ public class Imprimir extends javax.swing.JFrame {
         jTextAreaProductos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel.add(jTextAreaProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 580, 820, 280));
 
-        jLabelNumeroFactura.setFont(new java.awt.Font("Tahoma", 0, 23)); // NOI18N
+        jLabelNumeroFactura.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
         jLabelNumeroFactura.setText("jLabel2");
         panel.add(jLabelNumeroFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 150, 30));
 
@@ -139,11 +140,11 @@ public class Imprimir extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1041, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1744, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 948, Short.MAX_VALUE)
         );
 
         pack();

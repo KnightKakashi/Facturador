@@ -29,6 +29,7 @@ public class MiVista extends javax.swing.JFrame {
        initComponents();
        cargarIconoEmpresa();
        configurarComboBoxConImagenes();
+       this.setLocationRelativeTo(null);
     }
 
     /**
@@ -109,7 +110,7 @@ public class MiVista extends javax.swing.JFrame {
         jLabelCantidad = new javax.swing.JLabel();
         jLabelPrecio = new javax.swing.JLabel();
         jTextFieldCantidad = new javax.swing.JTextField();
-        jComboBoxNombreProducto = new javax.swing.JComboBox<>();
+        jComboBoxNombreProducto = new javax.swing.JComboBox<String>();
         jTextFieldPrecio = new javax.swing.JTextField();
         jLabelDescuento = new javax.swing.JLabel();
         jTextFieldDescuento = new javax.swing.JTextField();
@@ -122,7 +123,7 @@ public class MiVista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FACTURA");
-        setLocation(new java.awt.Point(660, 300));
+        setLocation(new java.awt.Point(0, 0));
 
         jTabbedPaneMiVista.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 153), new java.awt.Color(204, 0, 0), new java.awt.Color(51, 255, 0), new java.awt.Color(0, 51, 153)));
         jTabbedPaneMiVista.setForeground(new java.awt.Color(0, 51, 153));
@@ -222,7 +223,7 @@ public class MiVista extends javax.swing.JFrame {
         jTextFieldCantidad.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jComboBoxNombreProducto.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jComboBoxNombreProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MANZANA", "PERA", "PLATANO", "MANGO", "PIÑA", "                                  ." }));
+        jComboBoxNombreProducto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "MANZANA", "PERA", "PLATANO", "MANGO", "PIÑA", "                                  ." }));
         jComboBoxNombreProducto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jTextFieldPrecio.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
